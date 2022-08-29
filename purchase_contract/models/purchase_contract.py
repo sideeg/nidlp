@@ -29,8 +29,6 @@ class PurchaseContract(models.Model):
     def _compute_remaining_days(self):
         for record in self:
             if record.contract_start_date and record.contract_end_date:
-                x=datetime.strptime(str(record.contract_end_date),'%Y-%m-%d') - datetime.strptime(str(record.contract_start_date),'%Y-%m-%d')
-                print(x,type(x),str(x) )
                 record.remaining_days = record.contract_end_date - record.contract_start_date
             else:
                 record.remaining_days = 0
@@ -44,15 +42,15 @@ class PurchaseContract(models.Model):
                 record.guarantee_visible = 0
 
     def _ir_cron_auto_notification(self):
-        print(self,type(self),"##########################################################################")
         for record in self:
             print("Inside the function%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
-            x = datetime.strptime(str(record.contract_end_date), '%Y-%m-%d') - datetime.strptime(str(datetime.now(), '%Y-%m-%d'))
-            print(x , str(x).replace("days",""))
-            users = self.env['res.users'].search([])
-            for user  in users :
-                if user.has_group('purchase.group_purchase_manager'):
-                    record.activity_scheduale('Applicant Request',user_id=user.id)
+            x = str(datetime.strptime(str(record.contract_end_date), '%Y-%m-%d') - datetime.strptime(str(datetime.now(), '%Y-%m-%d')))
+            x= x[:x.index('d')]
+            if int(x) <= 30:
+                users = self.env['res.users'].search([])
+                for user  in users :
+                    if user.has_group('purchase.group_purchase_manager'):
+                        record.activity_scheduale('Applicant Request',user_id=user.id)
 
     def po_full_billed(self):
         for rec in  self:
