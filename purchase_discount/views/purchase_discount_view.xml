@@ -37,6 +37,18 @@
             >
                 <field name="discount" />
             </xpath>
+             <xpath
+                expr="//field[@name='tax_totals_json']"
+                position="after"
+            >
+                <field name="total_discount" />
+            </xpath>
+<!--            <xpath-->
+<!--                expr="//field[@name='amount_total']"-->
+<!--                position="before"-->
+<!--            >-->
+<!--                <field name="discount" />-->
+<!--            </xpath>-->
         </field>
     </record>
 </odoo>

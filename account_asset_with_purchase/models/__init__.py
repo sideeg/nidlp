@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-from . import purchase_contract
+from . import account_asset_with_purchase

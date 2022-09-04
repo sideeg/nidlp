@@ -1,40 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data>
-    <record id="purchase_order_inherited_form_purchase" model="ir.ui.view">
-        <field name="name">purchase.order.inherited.form.purchase</field>
-        <field name="model">purchase.order</field>
-        <field name="inherit_id" ref="purchase.purchase_order_form"/>
-        <field name="arch" type="xml">
+<odoo>
+    <data>
+        <record id="view_account_asset_purchase_tree_inherit" model="ir.ui.view">
+            <field name="name">purchase.order.inherited.form.purchase.inherit</field>
+            <field name="model">account.asset</field>
+            <field name="inherit_id" ref="account_asset.view_account_asset_purchase_tree"/>
+            <field name="arch" type="xml">
 
-                <xpath expr="//button[@name='button_cancel']" position="after">
-                <button name="po_full_billed" string="po full billed" type="object" attrs="{'invisible': [ ('state', 'not in', ('purchase', 'done'))]}" groups="base.group_no_one"/>
-            </xpath>
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="bill_ref" string="Bill  Ref"/>
+                    <field name="vendor"/>
 
-            <xpath expr="//div[@name='date_planned_div']" position="after">
-                        <field name="type"/>
-            </xpath>
-            <xpath expr="//page[@name='purchase_delivery_invoice']" position="after">
-                <page string="Contract Information" name="purchase_contract_info" attrs="{'invisible': [('type', '!=', 'Contract')]}">
-                            <group>
-                                <group name="period_info">
-                                    <field name="contract_start_date" />
-                                    <field name="contract_end_date" />
-                                    <field name="remaining_days"/>
-                                </group>
-                                <group name="contract_info">
-                                    <field name="contract_type" />
-                                    <field name="contract_no" />
-                                </group>
-                            </group>
-                                                        <field name="guarantee_visible" invisible='1'/>
+                </xpath>
 
-                            <group name="guarantee_info" attrs="{'invisible': [('guarantee_visible', '==', 0)]}">
-                                    <field name="guarantee_value" />
-                                    <field name="guarantee_period" />
-                                    <field name="bank_name" />
-                            </group>
-                        </page>
-            </xpath>
-        </field>
-    </record>
-</data></odoo>
+
+            </field>
+        </record>
+    </data>
+</odoo>

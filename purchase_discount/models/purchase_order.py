@@ -10,6 +10,18 @@ from odoo import api, fields, models
 class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
 
+    total_discount = fields.Float(compute='_compute_total_discount_amount')
+
+
+    # calc total discount
+    @api.depends('order_line.discount')
+    def _compute_total_discount_amount(self):
+        total = 0
+        for rec in self :
+            for line  in rec.order_line :
+                total += line.discount
+            rec.update({'total_discount':((total/100)*rec.amount_total),})
+
     def _add_supplier_to_product(self):
         """Insert a mapping of products to PO lines to be picked up
         in supplierinfo's create()"""
