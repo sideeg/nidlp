@@ -5,6 +5,7 @@
 
 
 from odoo import api, fields, models
+import json
 
 
 class PurchaseOrder(models.Model):
@@ -12,15 +13,24 @@ class PurchaseOrder(models.Model):
 
     total_discount = fields.Float(compute='_compute_total_discount_amount')
 
+    def _compute_tax_totals_json(self):
+        super(SaleOrder, self)._compute_tax_totals_json()
+        for rec in self:
+            tax_totals_json_dict = json.loads(rec.tax_totals_json)
+            tax_totals_json_dict.update(
+                {'total_discount': rec.total_discount,})
+                 # 'amount_total': rec.amount_total - (rec.amount_total * (rec.total_discount / 100))})
+            rec.tax_totals_json = json.dumps(tax_totals_json_dict)
 
     # calc total discount
     @api.depends('order_line.discount')
     def _compute_total_discount_amount(self):
         total = 0
-        for rec in self :
-            for line  in rec.order_line :
-                total += line.discount
-            rec.update({'total_discount':((total/100)*rec.amount_total),})
+        for rec in self:
+            for line in rec.order_line:
+                total += line.discount / 100 * line.price_unit
+            rec.update({'total_discount': total, })
+            rec.update({'amount_total': rec.amount_total  - total, })
 
     def _add_supplier_to_product(self):
         """Insert a mapping of products to PO lines to be picked up
@@ -124,7 +134,7 @@ class PurchaseOrderLine(models.Model):
 
     @api.model
     def _prepare_purchase_order_line(
-        self, product_id, product_qty, product_uom, company_id, supplier, po
+            self, product_id, product_qty, product_uom, company_id, supplier, po
     ):
         """Apply the discount to the created purchase order"""
         res = super()._prepare_purchase_order_line(
