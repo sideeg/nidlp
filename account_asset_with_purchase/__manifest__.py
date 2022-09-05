@@ -8,11 +8,8 @@
     'description': """ """,
     'category': 'Accounting/Accounting',
 
-    'depends' : ['purchase','account_account'],
+    'depends' : ['purchase','account_accountant','account_asset'],
     'data': [
-        'security/account_security.xml',
-        'security/ir.model.access.csv',
-        #'data/service_cron.xml',
         'views/view_account_asset_purchase_tree.xml',
     ],
     'demo': [    ],
