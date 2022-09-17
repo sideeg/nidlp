@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="employee_delegations_form_view" model="ir.ui.view">
+            <field name="name">employee.delegations.form</field>
+            <field name="model">employee.delegations</field>
+            <field name="arch" type="xml">
+                <form string="Employee Delegations">
+                    <header>
+                        <field name="is_granted" invisible="True"/>
+                        <button name="set_to_draft" type="object" string="Set To Draft"  />
+                        <button name="access_granted" class="oe_highlight" type="object" string="Granted Access" attrs="{'invisible': [('is_granted', '=', True)]}"/>
+                        <button name="access_returned" class="oe_highlight" type="object" string="returned Access"  attrs="{'invisible': [('is_granted', '=', False)]}"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,access_granted,access_returned" readonly="False"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+
+                                <field name="readonly" invisible="1"/>
+                                <field name="employee_id" attrs="{'readonly':[('readonly','=',True)]}"/>
+                                <field name="delegated_employee_id" attrs="{'readonly':[('readonly','=',True)]}"/>
+                            </group>
+                            <group>
+                                <field name="date"/>
+                                <label for="date_from" string="period"/>
+                                <div name="period" class="o_row">
+                                    <field name="date_from" widget="daterange"
+                                           options='{"related_end_date": "date_to"}'/>
+                                    <i class="fa fa-long-arrow-right mx-2 oe_edit_only" aria-label="Arrow icon"
+                                       title="Arrow"/>
+                                    <i class="fa fa-long-arrow-right mx-2 oe_read_only" aria-label="Arrow icon"
+                                       title="Arrow"
+                                       attrs="{'invisible': [('date_from', '=', False), ('date_to', '=', False)]}"/>
+                                    <field name="date_to" widget="daterange"
+                                           options='{"related_start_date": "date"}'/>
+                                </div>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="group_ids" attrs="{'readonly':[('readonly','=',True)]}"/>
+                        </group>
+                        <field name="name" placeholder="Note"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="employee_delegations_tree_view" model="ir.ui.view">
+            <field name="name">employee.delegations.tree</field>
+            <field name="model">employee.delegations</field>
+            <field name="arch" type="xml">
+                <tree string="Employee Delegations">
+                    <field name="employee_id"/>
+                    <field name="delegated_employee_id"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="employee_delegations_act_window" model="ir.actions.act_window">
+            <field name="name">Employee Delegations</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">employee.delegations</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Employee Delegations" id="employee_delegations_menu" parent="hr.menu_hr_root"
+                  sequence="80"
+                  action="employee_delegations_act_window"/>
+
+    </data>
+</odoo>
