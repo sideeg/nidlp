@@ -8,6 +8,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/view.xml',
-        'views/hr_leave_form_inherited.xml'
+        'views/hr_leave_form_inherited.xml',
+        'data/custom_channels.xml'
     ],
 }
