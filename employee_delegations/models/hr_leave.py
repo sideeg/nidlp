@@ -10,7 +10,7 @@ class HrLeave(models.Model):
     _inherit = 'hr.leave'
     # delegations_id = fields.Many2one('employee.delegations')
     delegations_employee_id = fields.Many2one('hr.employee', 'delegations')
-
+    
     def action_approve(self):
 
             # group_e.write({'users': [(1, self.env.user.id)]})

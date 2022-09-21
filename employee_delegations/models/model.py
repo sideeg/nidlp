@@ -22,7 +22,7 @@ class EmployeeDelegations(models.Model):
     copy_group_ids = fields.Many2many('res.groups', 'delegations_id')
     readonly = fields.Boolean(default=False)
     is_granted = fields.Boolean('is granted', readonly=True,default=False)
-    is_leave_user = fields.Boolean('is_leave_user',readonly=True,default=False)
+    # is_leave_user = fields.Boolean('is_leave_user',readonly=True,default=False)
     @api.onchange('delegated_employee_id')
     def onchange_method(self):
         self.group_ids = False
@@ -33,7 +33,7 @@ class EmployeeDelegations(models.Model):
             for r in self.employee_id.user_id.groups_id:
                 employee_groups.append(r.id)
                 if r.name == 'hr_holidays.group_hr_holidays_user':
-                    self.is_leave_user = True
+                    # self.is_leave_user = True
                     group_e = self.env.ref('hr_holidays.group_hr_holidays_user', False)
                     group_e.write({'users': [(3, self.env.user.employee_id.id)]})
 
@@ -50,8 +50,14 @@ class EmployeeDelegations(models.Model):
     def access_granted(self):
         for rec in self:
             if rec.group_ids :
+
                 for group_id in rec.group_ids:
                     rec.delegated_employee_id.user_id.groups_id = [(4, group_id.id)]
+                    if rec.name == 'hr_holidays.group_hr_holidays_user':
+                        # self.is_leave_user = True
+                        group_e = self.env.ref('hr_holidays.group_hr_holidays_user', False)
+                        group_e.write({'users': [(3, rec.delegated_employee_id.user_id)]})
+
                 rec.readonly = True
                 rec.is_granted = True
                 rec.state = 'access_granted'
@@ -63,12 +69,9 @@ class EmployeeDelegations(models.Model):
     def access_returned(self):
         for rec in self:
             if rec.group_ids :
-                if rec.is_leave_user :
-                    group_e = self.env.ref('hr_holidays.group_hr_holidays_user', False)
-                    group_e.write({'users': [(4,  rec.delegated_employee_id.user_id)]})
-
                 for group_id in rec.group_ids:
                     rec.delegated_employee_id.user_id.groups_id = [(4, group_id.id)]
+
                 rec.readonly = True
                 rec.is_granted = False
                 rec.state = 'access_returned'
