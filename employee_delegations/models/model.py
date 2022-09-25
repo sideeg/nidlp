@@ -1,4 +1,5 @@
 from odoo import fields, models, api
+from datetime import datetime
 
 
 class EmployeeDelegations(models.Model):
@@ -85,7 +86,10 @@ class EmployeeDelegations(models.Model):
             rec.readonly = False
             rec.state = 'draft'
 
-
+    def cron_access_returned(self):
+        for rec in self:
+            if rec.date_to < datetime.now() :
+                rec.access_returned()
 class ResGroups(models.Model):
     _inherit = 'res.groups'
     delegations_id = fields.Many2one('employee.delegations')

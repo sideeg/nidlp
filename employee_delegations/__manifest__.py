@@ -7,8 +7,10 @@
     'depends': ['hr', 'hr_holidays'],
     'data': [
         'security/ir.model.access.csv',
+        # 'data/custom_channels.xml',
+        'data/service_cron.xml',
         'views/view.xml',
         'views/hr_leave_form_inherited.xml',
-        'data/custom_channels.xml'
+
     ],
 }
