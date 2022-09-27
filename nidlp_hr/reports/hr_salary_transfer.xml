@@ -1,0 +1,215 @@
+<odoo>
+    <template id="salary_transfer_report">
+        <t t-call="web.basic_layout" t-lang="en_US">
+            <t t-set="docs" t-value="docs.with_context({'lang':'en_US'})" />
+            <t t-call="nidlp_base.nidlp_custom_header" />
+            <style>
+                * {
+                font-weight:bold !important;
+                }
+                h4 {text-align: center;}
+                table-bordered{
+                width:50%;
+                border:1px solid white !important;
+                }
+                tr > th{
+                border:1px solid white !important;
+                }
+                tr > td{
+                border:1px solid white !important;
+                width:50%;
+                }
+                td:nth-child(2) {
+                direction: rtl;
+                text-align:right;
+                }
+            </style>
+            <table class="table table-bordered font-weight-bold">
+                <tr>
+                    <td>
+                        <h5 t-out="'Subject: Salary Transfer Certificate'" />
+                        <br />
+                        <p>
+                            This is to certify that the below mentioned is our employee and based on authorization from
+                            him we will transfer his salary along with all other allowances and annual bonuses (if any)
+                            and deposit his final settlement including End of Service Benefits and any other allowances
+                            unless we get clearance from your side.
+                        </p>
+                        <br />
+                        <div class="row">
+                            <div class="col-12">
+                                <span t-out="'Employee Name:'" />
+                                <span t-field="docs.sudo().name" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span t-out="'ID NO:'" />
+                                <span t-field="docs.sudo().with_context(lang='en_US').identification_id" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span t-out="'Hire Date:'" />
+                                <span t-field="docs.sudo().with_context(lang='en_US').joining_date" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span t-out="'Job title:'" />
+                                <span t-field="docs.sudo().with_context(lang='en_US').job_title" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span t-out="'Basic salary:'" />
+                                <span t-field="contract.sudo().with_context(lang='en_US').wage" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span t-oud="'Housing allowance:'" />
+                                <span t-field="contract.sudo().with_context(lang='en_US').l10n_sa_housing_allowance" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span t-oud="'Transportation allowance:'" />
+                                <span
+                                    t-field="contract.sudo().with_context(lang='en_US').l10n_sa_transportation_allowance"
+                                />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span t-out="'To his bank account at:'" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span t-out="'Bank:'" />
+                                <span t-field="docs.sudo().with_context(lang='en_US').bank_id.bank_id.name" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span t-out="'From:'" />
+                                <span t-out="'Date: ' + date.strftime('%d/%m/%Y')" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span t-out="'IBAN NO:'" />
+                                <span t-field="docs.sudo().with_context(lang='en_US').bank_id.acc_number" />
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <h5>الموضوع : شهادة تحويل راتب</h5>
+                        <br />
+                        <p>
+                            نشهد بأن المذكور أدناه يعمل لدينا و بناء على تفويض منه فسوف يتم تحويل راتبه مع كامل البدلات
+                            و
+                            المكافأت السنوية (إن وجدت) و جميع مستحقاته النهائية شاملة مكافأة نهاية الخدمة، مالم يصلنا
+                            اخلاء طرف من قبلكم.
+                        </p>
+                        <br />
+                        <br />
+                        <div class="row">
+                            <div class="col-12">
+                                اسم الموظف :
+                                <span t-field="docs.sudo().arabic_name" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                رقــم الهـوية :
+                                <span t-field="docs.sudo().identification_id" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                تــاريخ التعيين :
+                                <span t-field="docs.sudo().with_context(lang='ar_001').joining_date" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                المسمى الوظيفي :
+                                <span t-field="docs.sudo().with_context(lang='ar_001').job_title" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                الـراتــب الاسـاسـي:
+                                <span t-field="contract.sudo().with_context(lang='ar_001').wage" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                بدل السكن :
+                                <span t-field="contract.sudo().with_context(lang='ar_001').l10n_sa_housing_allowance" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                بـدل النقل :
+                                <span
+                                    t-field="contract.sudo().with_context(lang='ar_001').l10n_sa_transportation_allowance"
+                                />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">إلى حسابه المصرفي لدى :</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                البنك :
+                                <span t-field="docs.sudo().bank_id.bank_id.with_context(lang='ar_001').name" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                أعتباراً من :
+                                <span t-out="'Date: ' + date.strftime('%d/%m/%Y')" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                رقم الحساب البنكي الدولي:
+                                <span t-field="docs.sudo().bank_id.acc_number" />
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-3 offset-1">
+                    <br />
+                    <br />
+                    <div style="text-align:right;">
+                        <span
+                            t-field="company.sudo().company_stamp"
+                            class='img-responsive'
+                            t-options='{"widget": "image"}'
+                        />
+                    </div>
+                </div>
+                <div class="col-4 text-center">
+                    <h6 t-field="issued_by.sudo().with_context(lang='ar_001').job_title" />
+                    <t t-if="issued_by.sudo().signature_img">
+                        <span
+                            t-field="issued_by.sudo().signature_img"
+                            class='img-responsive'
+                            t-options='{"widget": "image"}'
+                        />
+                    </t>
+                    <h6 t-field="issued_by.sudo().arabic_name" />
+                </div>
+            </div>
+            <t t-call="nidlp_base.nidlp_custom_footer" />
+        </t>
+    </template>
+</odoo>

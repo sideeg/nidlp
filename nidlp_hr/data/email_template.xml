@@ -1,0 +1,80 @@
+<odoo>
+    <record id="mail_template_new_joiner" model="mail.template">
+        <field name="name">new joiner_template</field>
+        <field name="model_id" ref="hr.model_hr_employee" />
+        <field name="email_from">${(object.user_id.email_formatted or user.email_formatted) | safe}</field>
+        <field name="subject">A new joiner</field>
+        <field
+            name="body_html"
+        ><![CDATA[
+<div style='direction: rtl; text-align:right;'>
+السادة الكرام&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;تحيه طيبه،،، <br/>
+مرفق لكم المعلومات الكامله للموظف (<span t-out="object.arabic_name"/> – رقم وظيفي - <span t-out="object.employee_id_char"/>) .<br/>
+<div align="right">
+    <table dir="rtl" style="border-collapse:collapse" cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+    <tr>
+    <td colspan="2" style="width:373.0pt;border:solid #c9a4e4 1.0pt;padding:0cm 5.4pt 0cm 5.4pt" width="497" valign="top">
+        <span> بيانات الموظف</span>
+    </td>
+    </tr>
+    <tr>
+    <td style="width:103.3pt;border:solid #c9a4e4 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt" width="138" valign="top">
+        <span> الاسم </span>
+    </td>
+    <td style="width:269.7pt;border-top:none;border-bottom:solid #c9a4e4 1.0pt;padding:0cm 5.4pt 0cm 5.4pt" width="360" valign="top">
+        <span t-out="object.name"/>&nbsp;<span t-out="object.arabic_name or ''"/>
+    </td>
+    </tr>
+    <tr style="height:2.0pt">
+    <td style="width:103.3pt;border:solid #c9a4e4 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:2.0pt" width="138" valign="top">
+        <span> الجوال</span>
+    </td>
+    <td style="width:269.7pt;border-top:none;border-bottom:solid #c9a4e4 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:2.0pt" width="360" valign="top">
+        <span t-out="object.work_phone or ''"/>
+    </td>
+    </tr>
+    <tr>
+    <td style="width:103.3pt;border:solid #c9a4e4 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt" width="138" valign="top">
+        <span> البريد الإلكتروني</span>
+    </td>
+    <td style="width:269.7pt;border-top:none;border-bottom:solid #c9a4e4 1.0pt;padding:0cm 5.4pt 0cm 5.4pt" width="360" valign="top">
+        <span t-out="object.work_email or ''"/>
+    </td>
+    </tr>
+    <tr>
+    <td style="width:103.3pt;border:solid #c9a4e4 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt" width="138" valign="top">
+        <span> المسمى الوظيفي</span>
+    </td>
+    <td style="width:269.7pt;border-top:none;border-bottom:solid #c9a4e4 1.0pt;padding:0cm 5.4pt 0cm 5.4pt" width="360" valign="top">
+        <span t-out="object.job_title or ''"/>
+        /<span t-out="object.with_context(lang='ar_001').job_title or ''"/>
+    </td>
+    </tr>
+    <tr>
+    <td style="width:103.3pt;border:solid #c9a4e4 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt" width="138" valign="top">
+        <span> القطاع</span>
+    </td>
+    <td style="width:269.7pt;border-top:none;border-bottom:solid #c9a4e4 1.0pt;padding:0cm 5.4pt 0cm 5.4pt" width="360" valign="top">
+        <span t-out="object.sector_id.with_context(lang='ar_001').name or ''"/>
+    </td>
+    </tr>
+    <tr>
+    <td style="width:103.3pt;border:solid #c9a4e4 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt" width="138" valign="top">
+        <span>تاريخ المباشرة</span>
+    </td>
+    <td style="width:269.7pt;border-top:none;border-bottom:solid #c9a4e4 1.0pt;padding:0cm 5.4pt 0cm 5.4pt" width="360" valign="top">
+        <span t-field="object.with_context(lang='ar_001').joining_date"/>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+<br/>
+<br/>
+ولكم مني جزيل الشكر...
+</div>
+                    ]]>
+            </field>
+    </record>
+</odoo>

@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "MonixBold";
+    src: local("MonixBold"), local("MonixBold"),
+        url(/nidlp_approvals/static/src/fonts/ArbFONTS-DINNEXTLTARABIC-LIGHT-1.ttf) format("opentype");
+}
+
+.h1-title-big {
+    font-family: MonixBold;
+    direction: rtl;
+}

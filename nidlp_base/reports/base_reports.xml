@@ -1,0 +1,54 @@
+<odoo>
+    <template id="nidlp_custom_header">
+        <div class="header row">
+            <div
+                class="col-9 text-left"
+                style="margin-top:22px;"
+                t-out="'Date: ' + date.strftime('%d/%m/%Y')"
+                name="moto"
+            />
+            <div class="col-3 mb4">
+                <img
+                    t-if="company.logo"
+                    t-att-src="image_data_uri(company.logo)"
+                    style="max-height: 45px;"
+                    alt="Logo"
+                />
+            </div>
+        </div>
+    </template>
+    <template id="nidlp_custom_footer">
+        <div class="footer" style="font-size: 12px; color:gray;">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <span>هذا الخطاب معتمد الكترونيا من برنامج تطوير الصناعة الوطنية والخدمات اللوجستية</span>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-3 text-center">
+                    <img class="img" src="/nidlp_base/static/img/vision-2030-logo.png" style="max-height: 60px;" />
+                </div>
+                <div class="col-3">
+                    <span class="align-bottom">
+                        P.O.Box 2573 Riyadh 13325
+                        <br />
+                        Kingdom of Saudi Arabia
+                    </span>
+                </div>
+                <div class="col-3 text-center">
+                    www.nidlp.gov.sa
+                    <br />
+                    <span>R.No 7011010217</span>
+                    <span>سجل</span>
+                </div>
+                <div class="col-3 text-right">
+                    <span>ص.ب 2573</span>
+                    <span>الرياض 13325</span>
+                    <br />
+                    <span>المملكة العربية السعودية</span>
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>

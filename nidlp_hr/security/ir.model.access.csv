@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_sector,access_hr_sector,model_hr_sector,base.group_user,1,1,1,1
+access_hr_employee_beneficiary,access_hr_employee_beneficiary,model_hr_employee_beneficiary,base.group_user,1,1,1,1
+access_hr_employee_rank,access_hr_employee_rank,nidlp_hr.model_hr_employee_rank,base.group_user,1,1,1,1
+access_hr_contract_salary_type,access.hr.contract.salary.type,nidlp_hr.model_hr_contract_salary_type,,1,1,1,1
+access_insurance_type_officer,hr.insurance.type,nidlp_hr.model_insurance_type,,1,1,1,1
+

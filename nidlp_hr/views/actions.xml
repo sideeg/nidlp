@@ -1,0 +1,49 @@
+<odoo>
+    <record id="action_report_salary_report" model="ir.actions.report">
+        <field name="name">Salary Document</field>
+        <field name="model">hr.employee</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">nidlp_hr.salary_report</field>
+        <field name="report_file">nidlp_hr.salary_report</field>
+        <field name="print_report_name">'Salary Document'</field>
+        <field name="binding_model_id" ref="hr.model_hr_employee" />
+        <field name="binding_view_types">form</field>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="action_report_salary_transfer_report" model="ir.actions.report">
+        <field name="name">Salary Transfer Document</field>
+        <field name="model">hr.employee</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">nidlp_hr.salary_transfer_report</field>
+        <field name="report_file">nidlp_hr.salary_transfer_report</field>
+        <field name="print_report_name">'Salary Transfer Document'</field>
+        <field name="binding_model_id" ref="hr.model_hr_employee" />
+        <field name="binding_view_types">form</field>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="rank_menu_action" model="ir.actions.act_window">
+        <field name="name">Employee Grades</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.employee.rank</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+        action="rank_menu_action"
+        id="rank_default_menu"
+        name="Employee Grade"
+        groups="nidlp_base.group_private_employee_visiblity"
+        parent="hr.menu_human_resources_configuration"
+    />
+    <record id="sector_menu_action" model="ir.actions.act_window">
+        <field name="name">Sectors</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.sector</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+        action="sector_menu_action"
+        id="sector_default_menu"
+        name="Sectors"
+        parent="hr.menu_human_resources_configuration"
+    />
+</odoo>

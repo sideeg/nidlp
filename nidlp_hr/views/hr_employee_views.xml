@@ -1,0 +1,87 @@
+<odoo>
+    <record id="view_employee_form" model="ir.ui.view">
+        <field name="name">hr.employee.form</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='mobile_phone']" position="before">
+                <field name="employee_id_char" required="1" string="Employee Identification"/>
+            </xpath>
+            <xpath expr="//field[@name='work_location_id']" position="after">
+                <field name="joining_date" required="1"/>
+            </xpath>
+            <xpath expr="//field[@name='identification_id']" position="after">
+                <field name="hijri_id_expiration" string="Hijri ID Expiration"/>
+            </xpath>
+            <xpath expr="//field[@name='birthday']" position="after">
+                <field name="hijri_dob" string="Hijri D.O.B."/>
+            </xpath>
+            <xpath expr="//field[@name='certificate']" position="before">
+                <field name="graduation_year" options="{'format': 0}"/>
+            </xpath>
+            <xpath expr="//form/sheet/notebook" position="inside">
+                <page string="Beneficiaries" name="hr_beneficiary">
+                    <group name="employee_beneficiary">
+                        <field name="employee_beneficiary_ids">
+                            <tree editable='bottom'>
+                                <field name="name"/>
+                                <field name="beneficiary_id"/>
+                                <field name="phone_number"/>
+                                <field name="relation"/>
+                                <field name="gender"/>
+                                <field name="birth_date"/>
+                                <field name="note"/>
+                                <field name="insurance_type_id"/>
+                                <field name="insurance_mount"/>
+                            </tree>
+                        </field>
+                        <field name="insurance_mount_total"/>
+                    </group>
+                </page>
+                <page string="WPS Data" name="hr_beneficiary">
+                    <group name="employee_wps">
+                        <field name="arabic_name_1"/>
+                        <field name="arabic_name_2"/>
+                        <field name="arabic_name_3"/>
+                        <field name="arabic_name_4"/>
+                    </group>
+                </page>
+                <page name="employee_cost" string="Employee Cost">
+                    <group string="Insurance Cost">
+                        <field name="employee_insurance_amount"/>
+                        <field name="insurance_mount_total"/>
+                        <field name="insurance_mount_total_month"/>
+                        <field name="insurance_mount_total_day"/>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr='//field[@name="user_id"]' position="after">
+                <field name="partner_id" string="related contact"/>
+            </xpath>
+            <xpath expr='//field[@name="department_id"]' position="after">
+                <field name="sector_id" required="1"/>
+                <field name="employee_rank_id" string="Grade" groups="nidlp_base.group_private_employee_visiblity"/>
+            </xpath>
+            <xpath expr="//page[@name='personal_information']/group" position="inside">
+                <group string="NIDLP INFO">
+                    <field name="signature_img"/>
+                    <field name="bank_id" domain="[('partner_id','=',partner_id)]" options='{ "no_create": True}'/>
+                </group>
+            </xpath>
+            <xpath expr="//h1" position="after">
+                <h1 class="d-flex">
+                    <field name="arabic_name" placehold='Employee Arabic Name' required="True"/>
+                </h1>
+            </xpath>
+            <xpath expr="//field[@name='job_title']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='work_phone']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='work_email']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

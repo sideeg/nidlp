@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <record id="action_wps_report" model="ir.actions.report">
+            <field name="name">WPS Report</field>
+            <field name="model">hr.payslip</field>
+            <field name="report_type">xlsx</field>
+            <field name="report_name">print_wps_report</field>
+            <field name="print_report_name">(object._get_report_base_filename())</field>
+            <field name="binding_model_id" ref="hr_payroll.model_hr_payslip" />
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="0">
+        <record id="mail_activity_data_trip_approval" model="mail.activity.type">
+            <field name="name">Trip Approved</field>
+            <field name="icon">fa-envelope</field>
+            <field name="sequence">3</field>
+        </record>
+        <record id="approval_category_beneficiary_reqeust" model="approval.category">
+            <field name="name">Beneficiary Request</field>
+            <field name="sequence">70</field>
+            <field name="has_beneficiary">required</field>
+        </record>
+        <record id="approval_category_data_procurement" model="approval.category">
+            <field name="name">Employee Certificate</field>
+            <field name="sequence">70</field>
+            <field name="has_date">required</field>
+            <field name="has_period">no</field>
+            <field name="has_quantity">no</field>
+            <field name="has_amount">no</field>
+            <field name="has_reference">no</field>
+            <field name="has_partner">no</field>
+            <field name="has_payment_method">no</field>
+            <field name="has_location">no</field>
+            <field name="requirer_document">optional</field>
+            <field name="approval_minimum">1</field>
+            <field name="is_employee_certificate">True</field>
+        </record>
+        <record id="approval_category_data_local_trip" model="approval.category">
+            <field name="name">Local Business Trip</field>
+            <field name="sequence">70</field>
+            <field name="has_period">required</field>
+            <field name="has_location">required</field>
+            <field name="has_distance_riyadh">required</field>
+            <field name="has_country">no</field>
+            <field name="has_employee_class">required</field>
+            <field name="has_external_stipend">no</field>
+            <field name="has_internal_stipend">required</field>
+            <field name="is_trip">True</field>
+        </record>
+        <record id="approval_category_data_business_trip" model="approval.category">
+            <field name="name">International Business Trip</field>
+            <field name="sequence">70</field>
+            <field name="has_period">required</field>
+            <field name="has_location">no</field>
+            <field name="has_distance_riyadh">no</field>
+            <field name="has_country">required</field>
+            <field name="has_employee_class">required</field>
+            <field name="has_external_stipend">required</field>
+            <field name="has_internal_stipend">no</field>
+            <field name="is_trip">True</field>
+        </record>
+    </data>
+</odoo>

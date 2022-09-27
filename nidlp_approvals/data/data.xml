@@ -1,0 +1,8 @@
+<odoo>
+    <data>
+        <record id="group_hr_approval" model="res.groups">
+            <field name="name">HR Approval Group</field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+    </data>
+</odoo>

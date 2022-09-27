@@ -1,0 +1,859 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* nidlp_hr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e-20220524\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-18 12:04+0000\n"
+"PO-Revision-Date: 2022-09-18 12:04+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: nidlp_hr
+#: model:mail.template,body_html:nidlp_hr.mail_template_new_joiner
+msgid ""
+"\n"
+"<div style='direction: rtl; text-align:right;'>\n"
+"السادة الكرام&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;تحيه طيبه،،، <br/>\n"
+"مرفق لكم المعلومات الكامله للموظف (<span t-out=\"object.arabic_name\"/> – رقم وظيفي - <span t-out=\"object.employee_id_char\"/>) .<br/>\n"
+"<div align=\"right\">\n"
+"    <table dir=\"rtl\" style=\"border-collapse:collapse\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\">\n"
+"    <tbody>\n"
+"    <tr>\n"
+"    <td colspan=\"2\" style=\"width:373.0pt;border:solid #c9a4e4 1.0pt;padding:0cm 5.4pt 0cm 5.4pt\" width=\"497\" valign=\"top\">\n"
+"        <span> بيانات الموظف</span>\n"
+"    </td>\n"
+"    </tr>\n"
+"    <tr>\n"
+"    <td style=\"width:103.3pt;border:solid #c9a4e4 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt\" width=\"138\" valign=\"top\">\n"
+"        <span> الاسم </span>\n"
+"    </td>\n"
+"    <td style=\"width:269.7pt;border-top:none;border-bottom:solid #c9a4e4 1.0pt;padding:0cm 5.4pt 0cm 5.4pt\" width=\"360\" valign=\"top\">\n"
+"        <span t-out=\"object.name\"/>&nbsp;<span t-out=\"object.arabic_name or ''\"/>\n"
+"    </td>\n"
+"    </tr>\n"
+"    <tr style=\"height:2.0pt\">\n"
+"    <td style=\"width:103.3pt;border:solid #c9a4e4 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:2.0pt\" width=\"138\" valign=\"top\">\n"
+"        <span> الجوال</span>\n"
+"    </td>\n"
+"    <td style=\"width:269.7pt;border-top:none;border-bottom:solid #c9a4e4 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:2.0pt\" width=\"360\" valign=\"top\">\n"
+"        <span t-out=\"object.work_phone or ''\"/>\n"
+"    </td>\n"
+"    </tr>\n"
+"    <tr>\n"
+"    <td style=\"width:103.3pt;border:solid #c9a4e4 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt\" width=\"138\" valign=\"top\">\n"
+"        <span> البريد الإلكتروني</span>\n"
+"    </td>\n"
+"    <td style=\"width:269.7pt;border-top:none;border-bottom:solid #c9a4e4 1.0pt;padding:0cm 5.4pt 0cm 5.4pt\" width=\"360\" valign=\"top\">\n"
+"        <span t-out=\"object.work_email or ''\"/>\n"
+"    </td>\n"
+"    </tr>\n"
+"    <tr>\n"
+"    <td style=\"width:103.3pt;border:solid #c9a4e4 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt\" width=\"138\" valign=\"top\">\n"
+"        <span> المسمى الوظيفي</span>\n"
+"    </td>\n"
+"    <td style=\"width:269.7pt;border-top:none;border-bottom:solid #c9a4e4 1.0pt;padding:0cm 5.4pt 0cm 5.4pt\" width=\"360\" valign=\"top\">\n"
+"        <span t-out=\"object.job_title or ''\"/>\n"
+"        /<span t-out=\"object.with_context(lang='ar_001').job_title or ''\"/>\n"
+"    </td>\n"
+"    </tr>\n"
+"    <tr>\n"
+"    <td style=\"width:103.3pt;border:solid #c9a4e4 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt\" width=\"138\" valign=\"top\">\n"
+"        <span> القطاع</span>\n"
+"    </td>\n"
+"    <td style=\"width:269.7pt;border-top:none;border-bottom:solid #c9a4e4 1.0pt;padding:0cm 5.4pt 0cm 5.4pt\" width=\"360\" valign=\"top\">\n"
+"        <span t-out=\"object.sector_id.with_context(lang='ar_001').name or ''\"/>\n"
+"    </td>\n"
+"    </tr>\n"
+"    <tr>\n"
+"    <td style=\"width:103.3pt;border:solid #c9a4e4 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt\" width=\"138\" valign=\"top\">\n"
+"        <span>تاريخ المباشرة</span>\n"
+"    </td>\n"
+"    <td style=\"width:269.7pt;border-top:none;border-bottom:solid #c9a4e4 1.0pt;padding:0cm 5.4pt 0cm 5.4pt\" width=\"360\" valign=\"top\">\n"
+"        <span t-field=\"object.with_context(lang='ar_001').joining_date\"/>\n"
+"    </td>\n"
+"    </tr>\n"
+"    </tbody>\n"
+"    </table>\n"
+"    </div>\n"
+"<br/>\n"
+"<br/>\n"
+"ولكم مني جزيل الشكر...\n"
+"</div>\n"
+"                    \n"
+"            "
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.actions.report,print_report_name:nidlp_hr.action_report_salary_report
+msgid "'Salary Document'"
+msgstr "مستند الراتب"
+
+#. module: nidlp_hr
+#: model:ir.actions.report,print_report_name:nidlp_hr.action_report_salary_transfer_report
+msgid "'Salary Transfer Document'"
+msgstr "مستند تحويل الراتب"
+
+#. module: nidlp_hr
+#: model:ir.actions.report,print_report_name:nidlp_hr.action_wps_report
+msgid "(object._get_report_base_filename())"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_report
+msgid "<span class=\"nidlp_table_header\">إلى:</span>"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_report
+msgid ""
+"<span>\n"
+"                            Hereby National Industrial Development and Logistics Program certifies that the\n"
+"                            Mentioned\n"
+"                            Above is one of our employees to date.\n"
+"                        </span>"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_report
+msgid ""
+"<span>\n"
+"                            This certificate was given to him upon his request with no liabilities or responsibilities\n"
+"                            on\n"
+"                            the program.\n"
+"                        </span>"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_report
+msgid ""
+"<span>\n"
+"                            نشهد بأن المذكور هويته أعلاه هو أحد منسوبي برنامج تطوير الصناعة الوطنية والخدمات\n"
+"                            اللوجستية حتى\n"
+"                            تاريخه وبناء عليه أعطيت هذه الشهادة دون أدنى مسؤولية.\n"
+"                        </span>"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_report
+msgid ""
+"<span>Note that this certificate is valid for one month from issue "
+"date.</span>"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_report
+msgid "<span>علماً أن هذا التعريف ساري لمدة شهر من تاريخه</span>"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_report
+msgid ""
+"<span>وقد آعطيت هذه الشهادة له بناء على طلبه دون آدنى مسؤولية على "
+"البرنامج</span>"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:mail.template,subject:nidlp_hr.mail_template_new_joiner
+msgid "A new joiner"
+msgstr "موظف جديد"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_beneficiary__approval_id
+msgid "Approval"
+msgstr "نوافقة"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee__arabic_name
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_base__arabic_name
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_public__arabic_name
+msgid "Arabic Name"
+msgstr "الاسم بالعربي"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee__arabic_name_1
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_base__arabic_name_1
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_public__arabic_name_1
+msgid "Arabic Name 1"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee__arabic_name_2
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_base__arabic_name_2
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_public__arabic_name_2
+msgid "Arabic Name 2"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee__arabic_name_3
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_base__arabic_name_3
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_public__arabic_name_3
+msgid "Arabic Name 3"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee__arabic_name_4
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_base__arabic_name_4
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_public__arabic_name_4
+msgid "Arabic Name 4"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.model,name:nidlp_hr.model_hr_employee_base
+msgid "Basic Employee"
+msgstr "الموظف العادي "
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.view_employee_form
+msgid "Beneficiaries"
+msgstr "المستفيدين"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_beneficiary__beneficiary_id
+msgid "Beneficiary"
+msgstr "المستفيد"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_beneficiary__birth_date
+msgid "Birth Date"
+msgstr "تاريخ الميلاد"
+
+#. module: nidlp_hr
+#: model:ir.model.fields.selection,name:nidlp_hr.selection__hr_employee_rank__flight_ticket_type__business
+msgid "Business Class"
+msgstr "درجة الاعمال"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee__certificate
+msgid "Certificate Level"
+msgstr "مستوى الشهادة"
+
+#. module: nidlp_hr
+#: model:ir.model,name:nidlp_hr.model_res_company
+msgid "Companies"
+msgstr "شركات"
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.res_config_settings_view_form
+msgid "Company CEO"
+msgstr "الرئيس التنفيذي للشركة"
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.res_config_settings_view_form
+msgid "Company CEO Employee ID"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_res_company__company_ceo
+#: model:ir.model.fields,field_description:nidlp_hr.field_res_config_settings__company_ceo
+msgid "Company Ceo"
+msgstr "الرئيس التنفيذي للشركة"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_res_company__company_stamp
+#: model:ir.model.fields,field_description:nidlp_hr.field_res_config_settings__company_stamp
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.res_config_settings_view_form
+msgid "Company Stamp"
+msgstr "ختم الشركة"
+
+#. module: nidlp_hr
+#: model:ir.model,name:nidlp_hr.model_res_config_settings
+msgid "Config Settings"
+msgstr "ضبط الاعدادات"
+
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_contract__cost_living_allowance
+msgid "Cost Living Allowance"
+msgstr "بدل المعيشة"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_beneficiary__create_uid
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_rank__create_uid
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_sector__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_beneficiary__create_date
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_rank__create_date
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_sector__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_beneficiary__employee_department
+msgid "Department"
+msgstr "القسم"
+
+#. module: nidlp_hr
+#: model:ir.model,name:nidlp_hr.model_hr_departure_wizard
+msgid "Departure Wizard"
+msgstr "معالج المغادرة"
+
+#. module: nidlp_hr
+#: model:ir.model.fields.selection,name:nidlp_hr.selection__hr_employee__certificate__diplma
+msgid "Diploma"
+msgstr "دبلوما"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_beneficiary__display_name
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_rank__display_name
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_sector__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.model.fields.selection,name:nidlp_hr.selection__hr_employee_rank__flight_ticket_type__economy
+msgid "Economy Class"
+msgstr "الدرجة السياحية"
+
+#. module: nidlp_hr
+#: model:ir.model,name:nidlp_hr.model_hr_employee
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_rank__employee_ids
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_sector__employee_ids
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee__employee_beneficiary_ids
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_base__employee_beneficiary_ids
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_public__employee_beneficiary_ids
+msgid "Employee Beneficiary"
+msgstr "مستخدمين الموظف"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_res_company__employee_certificate_issuer
+#: model:ir.model.fields,field_description:nidlp_hr.field_res_config_settings__employee_certificate_issuer
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.res_config_settings_view_form
+msgid "Employee Certificate Issuer"
+msgstr "مُصدر شهادة الموظف"
+
+#. module: nidlp_hr
+#: model:ir.model,name:nidlp_hr.model_hr_contract
+msgid "Employee Contract"
+msgstr "عقد الموظف"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee__employee_rank_id
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_base__employee_rank_id
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_public__employee_rank_id
+#: model:ir.ui.menu,name:nidlp_hr.rank_default_menu
+msgid "Employee Grade"
+msgstr "درجة الموظف"
+
+#. module: nidlp_hr
+#: model:ir.actions.act_window,name:nidlp_hr.rank_menu_action
+msgid "Employee Grades"
+msgstr "درجة الموظف"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee__employee_id_char
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_base__employee_id_char
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_public__employee_id_char
+msgid "Employee Id Char"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.view_employee_form
+msgid "Employee Identification"
+msgstr "الرقم الوظيفي"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_rank__external_trip_stipend
+msgid "External Trip Stipend"
+msgstr "يومية السفر الدولية"
+
+#. module: nidlp_hr
+#: model:ir.model.fields.selection,name:nidlp_hr.selection__hr_employee_beneficiary__gender__female
+msgid "Female"
+msgstr "انثى"
+
+#. module: nidlp_hr
+#: model:ir.model.fields.selection,name:nidlp_hr.selection__hr_employee_rank__flight_ticket_type__first
+msgid "First Class"
+msgstr "الدرجة الاولى"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_rank__flight_ticket_type
+msgid "Flight Ticket Type"
+msgstr "نوع تذكرة الطيران"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_beneficiary__name
+msgid "Full Name"
+msgstr "الاسم الكامل"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_beneficiary__gender
+msgid "Gender"
+msgstr "الجنس"
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.view_employee_form
+msgid "Grade"
+msgstr "الدرجة"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee__graduation_year
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_base__graduation_year
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_public__graduation_year
+msgid "Graduation Year"
+msgstr "تاريخ التخرج"
+
+#. module: nidlp_hr
+#: model:ir.model.fields.selection,name:nidlp_hr.selection__hr_employee__certificate__high_school
+msgid "High School"
+msgstr "ثانوية"
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.view_employee_form
+msgid "Hijri D.O.B."
+msgstr "تاريخ الميلاد بالهجري"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee__hijri_dob
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_base__hijri_dob
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_public__hijri_dob
+msgid "Hijri Dob"
+msgstr "تاريخ الميلاد بالهجري"
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.view_employee_form
+msgid "Hijri ID Expiration"
+msgstr "تاريخ انتهاء الهوية بالهجري"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee__hijri_id_expiration
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_base__hijri_id_expiration
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_public__hijri_id_expiration
+msgid "Hijri Id Expiration"
+msgstr "تاريخ انتهاء الهوية بالهجري"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_contract__housing_allowance
+msgid "Housing Allowance"
+msgstr "بدل السكن"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_beneficiary__id
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_rank__id
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_sector__id
+msgid "ID"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.res_config_settings_view_form
+msgid "IT Staff"
+msgstr "موظف IT"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_rank__internal_trip_stipend
+msgid "Internal Trip Stipend"
+msgstr "يومية السفر المحلية"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_leave__is_calender_days
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_leave_type__is_calender_days
+msgid "Is Calender Days"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_res_company__it_staff_ids
+#: model:ir.model.fields,field_description:nidlp_hr.field_res_config_settings__it_staff_ids
+msgid "It Staff"
+msgstr "موظف IT"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee__job_title
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_base__job_title
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_public__job_title
+msgid "Job Title"
+msgstr "المسمى الوظيفي"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee__joining_date
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_base__joining_date
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_public__joining_date
+msgid "Joining Date"
+msgstr "تاريخ التعيين"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_beneficiary____last_update
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_rank____last_update
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_sector____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_beneficiary__write_uid
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_rank__write_uid
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_sector__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_beneficiary__write_date
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_rank__write_date
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_sector__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_contract__leave_compensation_days
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_departure_wizard__leave_compensation_days
+msgid "Leave Compensation Days"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.model.fields.selection,name:nidlp_hr.selection__hr_employee_beneficiary__gender__male
+msgid "Male"
+msgstr "ذكر"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_sector__manager_id
+msgid "Manager"
+msgstr "مدير"
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.view_employee_form
+msgid "NIDLP INFO"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.res_config_settings_view_form
+msgid "NIDLP Settings"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_rank__name
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_sector__name
+msgid "Name"
+msgstr "اسم"
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.res_config_settings_view_form
+msgid "Name of the employee in employee certificate documents"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.res_config_settings_view_form
+msgid "Name of the it staff that will recieve emails on new joiners"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_beneficiary__note
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_rank__note
+msgid "Note"
+msgstr "ملاحظات"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_contract__other_allowance
+msgid "Other Allowance"
+msgstr "البدلات الاخرى"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee__partner_id
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_base__partner_id
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_public__partner_id
+msgid "Partner"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.model,name:nidlp_hr.model_hr_payslip
+msgid "Pay Slip"
+msgstr "إيصال دفع "
+
+#. module: nidlp_hr
+#: model:ir.model.fields.selection,name:nidlp_hr.selection__hr_employee__certificate__phd
+msgid "PhD"
+msgstr "الدكتوراه"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_contract__phone_allowance
+msgid "Phone Allowance"
+msgstr "بدل الهاتف"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_beneficiary__phone_number
+msgid "Phone Number"
+msgstr "رقم الهاتف"
+
+#. module: nidlp_hr
+#. openerp-web
+#: code:addons/nidlp_hr/static/src/xml/payslip_template.xml:0
+#, python-format
+msgid "Print WPS"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_beneficiary__employee_id
+msgid "Related Employee"
+msgstr "الموظف"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_beneficiary__relation
+msgid "Relation"
+msgstr "العلاقة"
+
+#. module: nidlp_hr
+#: model:ir.model,name:nidlp_hr.model_resource_calendar
+msgid "Resource Working Time"
+msgstr "فترة عمل المورد"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee__bank_id
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_base__bank_id
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_public__bank_id
+msgid "Salary Bank"
+msgstr "بنك الراتب"
+
+#. module: nidlp_hr
+#: model:ir.actions.report,name:nidlp_hr.action_report_salary_report
+msgid "Salary Document"
+msgstr "مستند الراتب"
+
+
+
+#. module: nidlp_hr
+#: model:ir.actions.report,name:nidlp_hr.action_report_salary_transfer_report
+msgid "Salary Transfer Document"
+msgstr "مستند تحويل الراتب"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_contract__salary_type_id
+msgid "Salary Type"
+msgstr "نوع الراتب"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee__sector_id
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_base__sector_id
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_public__sector_id
+#: model:ir.model.fields,field_description:nidlp_hr.field_res_users__sector_id
+msgid "Sector"
+msgstr "القطاع"
+
+#. module: nidlp_hr
+#: model:ir.actions.act_window,name:nidlp_hr.sector_menu_action
+#: model:ir.ui.menu,name:nidlp_hr.sector_default_menu
+msgid "Sectors"
+msgstr "القطاع"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee__signature_img
+msgid "Signature"
+msgstr "التوقيع"
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.res_config_settings_view_form
+msgid "Stamp of the company to be printed on documents"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_res_users__subordinate_employee_ids
+msgid "Subordinate Employee"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_transfer_report
+msgid ""
+"This is to certify that the below mentioned is our employee and based on authorization from\n"
+"                            him we will transfer his salary along with all other allowances and annual bonuses (if any)\n"
+"                            and deposit his final settlement including End of Service Benefits and any other allowances\n"
+"                            unless we get clearance from your side."
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.model,name:nidlp_hr.model_hr_leave
+msgid "Time Off"
+msgstr "الإجازات "
+
+#. module: nidlp_hr
+#: model:ir.model,name:nidlp_hr.model_hr_leave_type
+msgid "Time Off Type"
+msgstr "نوع الإجازة "
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_contract__total_package
+msgid "Total Package"
+msgstr "الراتب الاجمالي"
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_contract__transportation_allowance
+msgid "Transportation Allowance"
+msgstr "بدل المواصلات"
+
+#. module: nidlp_hr
+#: model:ir.model,name:nidlp_hr.model_res_users
+msgid "Users"
+msgstr "المستخدمون"
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.view_employee_form
+msgid "WPS Data"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.actions.report,name:nidlp_hr.action_wps_report
+msgid "WPS Report"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.model.fields,field_description:nidlp_hr.field_hr_employee_beneficiary__employee_phone
+msgid "Work Phone"
+msgstr "هاتف العمل"
+
+#. module: nidlp_hr
+#: model:ir.model,name:nidlp_hr.model_hr_employee_beneficiary
+msgid "hr.employee.beneficiary"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.model,name:nidlp_hr.model_hr_employee_rank
+msgid "hr.employee.rank"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.model,name:nidlp_hr.model_hr_sector
+msgid "hr.sector"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:mail.template,name:nidlp_hr.mail_template_new_joiner
+msgid "new joiner_template"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.view_employee_form
+msgid "related contact"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.model,name:nidlp_hr.model_report_nidlp_hr_salary_report
+msgid "report.nidlp_hr.salary_report"
+msgstr ""
+
+#. module: nidlp_hr
+#: model:ir.model,name:nidlp_hr.model_report_nidlp_hr_salary_transfer_report
+msgid "report.nidlp_hr.salary_transfer_report"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_transfer_report
+msgid "أعتباراً من :"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_transfer_report
+msgid "إلى حسابه المصرفي لدى :"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_transfer_report
+msgid "اسم الموظف :"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_report
+msgid "اسم الموظف:"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_transfer_report
+msgid "البنك :"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_report
+msgid "الجنسية:"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_report
+msgid "الراتب الأساسي:"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_report
+msgid "الراتب الإجمالي:"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_transfer_report
+msgid "الـراتــب الاسـاسـي:"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_transfer_report
+msgid "المسمى الوظيفي :"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_report
+msgid "المسمى الوظيفي:"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_transfer_report
+msgid "الموضوع : شهادة تحويل راتب"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_transfer_report
+msgid "بدل السكن :"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_report
+msgid "بدل السكن:"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_report
+msgid "بدل المواصلات:"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_transfer_report
+msgid "بـدل النقل :"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_report
+msgid "تاريخ التعيين:"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_transfer_report
+msgid "تــاريخ التعيين :"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_transfer_report
+msgid "رقــم الهـوية :"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_transfer_report
+msgid "رقم الحساب البنكي الدولي:"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_report
+msgid "رقم الهوية:"
+msgstr ""
+
+#. module: nidlp_hr
+#: model_terms:ir.ui.view,arch_db:nidlp_hr.salary_transfer_report
+msgid ""
+"نشهد بأن المذكور أدناه يعمل لدينا و بناء على تفويض منه فسوف يتم تحويل راتبه مع كامل البدلات\n"
+"                            و\n"
+"                            المكافأت السنوية (إن وجدت) و جميع مستحقاته النهائية شاملة مكافأة نهاية الخدمة، مالم يصلنا\n"
+"                            اخلاء طرف من قبلكم."
+msgstr ""

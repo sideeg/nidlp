@@ -1,0 +1,213 @@
+<odoo>
+    <template id="salary_report">
+        <t t-call="web.basic_layout">
+            <t t-call="nidlp_base.nidlp_custom_header" />
+            <style>
+                * {
+                font-weight:bold !important;
+                }
+                h4,h3,h5,h6 {text-align: center;}
+                table-bordered{
+                width:50%;
+                border:1px solid white !important;
+                }
+                tr > th{
+                border:1px solid white !important;
+                }
+                tr > td{
+                border:1px solid white !important;
+                width:50%;
+                }
+                td:nth-child(2) {
+                direction: rtl;
+                text-align:right;
+                }
+                .nidlp_paragraph{
+                position: relative;
+                right: 25px;
+                }
+                .nidlp_table_header{
+                    font-size:1.3em !important;
+                    font-weight:bold !important;
+                }
+            </style>
+            <h4>
+                <u>
+                    <span t-out="'Employee Certificate شهادة تعريف'" />
+                </u>
+            </h4>
+            <table class="table table-bordered">
+                <tr>
+                    <td>
+                        <span class="nidlp_table_header" t-out="'To:'" />
+                        <span class="nidlp_table_header" t-out="addressed_to['en']" />
+                    </td>
+                    <td>
+                        <span class="nidlp_table_header">إلى:</span>
+                        <span class="nidlp_table_header" t-out="addressed_to['ar']" />
+                    </td>
+<!--                    <br />-->
+                </tr>
+                <tr>
+                    <td>
+                        <span t-out="'Employee Name:'" />
+                        <span t-field="docs.name" />
+                    </td>
+                    <td>
+                        اسم الموظف:
+                        <span t-field="docs.arabic_name" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span t-out="'National ID:'" />
+                        <span t-field="docs.sudo().with_context(lang='en_US').identification_id" />
+                    </td>
+                    <td>
+                        رقم الهوية:
+                        <span t-field="docs.sudo().with_context(lang='ar_001').identification_id" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span t-out="'Nationality:'" />
+                        <span t-field="docs.sudo().with_context(lang='en_US').country_id.name" />
+                    </td>
+                    <td>
+                        الجنسية:
+                        <span t-field="docs.sudo().with_context(lang='ar_001').country_id.name" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span t-out="'Job Title:'" />
+                        <span t-field="docs.sudo().with_context(lang='en_US').job_title" />
+                    </td>
+                    <td>
+                        المسمى الوظيفي:
+                        <span t-field="docs.sudo().with_context(lang='ar_001').job_title" />
+                    </td>
+                </tr>
+                <t t-if="print_type == 'detailed_salary'">
+                    <tr>
+                        <td>
+                            <span t-out="'Basic Salary:'" />
+                            <span t-field="contract.sudo().with_context(lang='en_US').wage" />
+                        </td>
+                        <td>
+                            الراتب الأساسي:
+                            <span t-field="contract.sudo().with_context(lang='ar_001').wage" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span t-oud="'Housing Allowance:'" />
+                            <span t-field="contract.sudo().with_context(lang='en_US').l10n_sa_housing_allowance" />
+                        </td>
+                        <td>
+                            بدل السكن:
+                            <span t-field="contract.sudo().with_context(lang='ar_001').l10n_sa_housing_allowance" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span t-oud="'Transportation Allowance:'" />
+                            <span
+                                t-field="contract.sudo().with_context(lang='en_US').l10n_sa_transportation_allowance"
+                            />
+                        </td>
+                        <td>
+                            بدل المواصلات:
+                            <span
+                                t-field="contract.sudo().with_context(lang='ar_001').l10n_sa_transportation_allowance"
+                            />
+                        </td>
+                    </tr>
+                </t>
+                <t t-if="print_type != 'no_salary'">
+                    <tr>
+                        <td>
+                            <span t-out="'Total Package:'" />
+                            <span t-field="contract.sudo().with_context(lang='en_US').total_package" />
+                        </td>
+                        <td>
+                            الراتب الإجمالي:
+                            <span t-field="contract.sudo().with_context(lang='ar_001').total_package" />
+                        </td>
+                    </tr>
+                </t>
+                <tr>
+                    <td>
+                        <span t-out="'Hire Date:'" />
+                        <span t-field="docs.sudo().with_context(lang='en_US').joining_date" />
+                    </td>
+                    <td>
+                        تاريخ التعيين:
+                        <span t-field="docs.sudo().with_context(lang='ar_001').joining_date" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>
+                            Hereby National Industrial Development and Logistics Program certifies that the
+                            Mentioned
+                            Above is one of our employees to date.
+                        </span>
+                    </td>
+                    <td>
+                        <span>
+                            نشهد بأن المذكور هويته أعلاه هو أحد منسوبي برنامج تطوير الصناعة الوطنية والخدمات
+                            اللوجستية حتى
+                            تاريخه وبناء عليه أعطيت هذه الشهادة دون أدنى مسؤولية.
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>
+                            This certificate was given to him upon his request with no liabilities or responsibilities
+                            on
+                            the program.
+                        </span>
+                    </td>
+                    <td>
+                        <span>وقد آعطيت هذه الشهادة له بناء على طلبه دون آدنى مسؤولية على البرنامج</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>Note that this certificate is valid for one month from issue date.</span>
+                    </td>
+                    <td>
+                        <span>علماً أن هذا التعريف ساري لمدة شهر من تاريخه</span>
+                    </td>
+                </tr>
+            </table>
+            <div class="row">
+                <div class="col-3 offset-1">
+<!--                    <br />-->
+<!--                    <br />-->
+                    <div style="text-align:right;">
+                        <span
+                            t-field="company.sudo().company_stamp"
+                            class='img-responsive'
+                            t-options='{"widget": "image"}'
+                        />
+                    </div>
+                </div>
+                <div class="col-3 offset-1 text-center">
+                    <h6 t-field="issued_by.sudo().with_context(lang='ar_001').job_title" />
+                    <t t-if="issued_by.sudo().signature_img">
+                        <span
+                            t-field="issued_by.sudo().signature_img"
+                            class='img-responsive'
+                            t-options='{"widget": "image"}'
+                        />
+                    </t>
+                    <h6 t-field="issued_by.sudo().arabic_name" />
+                </div>
+            </div>
+            <t t-call="nidlp_base.nidlp_custom_footer" />
+        </t>
+    </template>
+</odoo>

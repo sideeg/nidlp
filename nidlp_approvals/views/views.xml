@@ -1,0 +1,668 @@
+<odoo>
+    <data>
+        <record id="approval_request_view_form" model="ir.ui.view">
+            <field name="name">approval.request.view.form</field>
+            <field name="model">approval.request</field>
+            <field name="inherit_id" ref="approvals.approval_request_view_form"/>
+            <field name="arch" type="xml">
+                <field name="date_start" position="attributes">
+                    <attribute name="widget">date</attribute>
+                </field>
+                <field name="date_end" position="attributes">
+                    <attribute name="widget">date</attribute>
+                </field>
+                <field name="date" position="attributes">
+                    <attribute name="widget">date</attribute>
+                </field>
+                <field name="date_confirmed" position="attributes">
+                    <attribute name="widget">date</attribute>
+                </field>
+                <xpath expr="//header" position="inside">
+                    <field name="is_employee_certificate" invisible="1"/>
+                </xpath>
+
+                <xpath expr="//header" position="inside">
+                    <button
+                            name="action_trip_send"
+                            string="send Trip"
+                            type="object"
+                            class="btn-primary"
+                            attrs="{'invisible': True}"
+                    />
+                    <!--                    [('is_trip','=',False)]-->
+                </xpath>
+                <xpath expr="//header" position="after">
+                    <!--                        Extra Header to make it look better.-->
+                    <header
+                            attrs="{'invisible':['|',('is_employee_certificate','!=',True),('request_status','!=','approved')]}"
+                    >
+                        <button
+                                name="print_salary_document"
+                                string="Print Document (Detailed Salary)"
+                                type="object"
+                                context="{'print_type': 'detailed_salary'}"
+                                attrs="{'invisible':[('employee_certificate_type','=','salary_dom')]}"
+                                class="btn-primary"
+                        />
+                        <button
+                                name="print_salary_document"
+                                string="Print Document (No Salary)"
+                                type="object"
+                                context="{'print_type': 'no_salary'}"
+                                attrs="{'invisible':[('employee_certificate_type','=','salary_dom')]}"
+                                class="btn-primary"
+                        />
+                        <button
+                                name="print_salary_document"
+                                string="Print Document (Total Salary)"
+                                type="object"
+                                context="{'print_type': 'total_salary'}"
+                                attrs="{'invisible':[('employee_certificate_type','=','salary_dom')]}"
+                                class="btn-primary"
+                        />
+                        <button
+                                name="print_salary_transfer_document"
+                                string="Print Document"
+                                type="object"
+                                attrs="{'invisible':[('employee_certificate_type','!=','salary_dom')]}"
+                                class="btn-primary"
+                        />
+                        <button
+                                name="action_trip_send"
+                                string="send Trip"
+                                type="object"
+                                class="btn-primary"
+                        />
+
+                    </header>
+                </xpath>
+                <xpath expr='//group[@name="request_main"]' position="inside">
+                    <label
+                            for="employee_certificate_type"
+                            string="Address to:"
+                            attrs="{'invisible':[('is_employee_certificate','=',False)]}"
+                    />
+                    <div attrs="{'invisible':[('is_employee_certificate','=', False)]}">
+                        <div>
+                            <field
+                                    name="employee_certificate_type"
+                                    class="oe_inline"
+                                    attrs="{'required': [('is_employee_certificate','=', True)], 'readonly': [('request_status','not in',('new', 'pending'))]}"
+                            />
+                        </div>
+                    </div>
+                    <label
+                            for="employee_certificate_address"
+                            string="Specific Address:"
+                            attrs="{'invisible':[('employee_certificate_type','!=','specific')]}"
+                    />
+                    <div attrs="{'invisible':[('employee_certificate_type','!=','specific')]}">
+                        <div>
+                            <field
+                                    name="employee_certificate_address"
+                                    class="oe_inline"
+                                    attrs="{'required': [('employee_certificate_type','=','specific')], 'readonly': [('request_status','not in',('new', 'pending'))]}"
+                            />
+                        </div>
+                    </div>
+                    <label
+                            for="employee_certificate_address_ar"
+                            string="Specific Address (Arabic):"
+                            attrs="{'invisible':[('employee_certificate_type','!=','specific')]}"
+                    />
+                    <div attrs="{'invisible':[('employee_certificate_type','!=','specific')]}">
+                        <div>
+                            <field
+                                    name="employee_certificate_address_ar"
+                                    class="oe_inline"
+                                    attrs="{'required': [('employee_certificate_type','=','specific')], 'readonly': [('request_status','not in',('new', 'pending'))]}"
+                            />
+                        </div>
+                    </div>
+                    <field name="employee_id" required="True" domain="[('user_id', '=', uid)]"/>
+                    <label
+                            for="approval_date"
+                            string="Approval Date:"
+                            attrs="{'invisible':[('request_status','!=','approved')]}"
+                    />
+                    <div attrs="{'invisible':[('request_status','!=','approved')]}">
+                        <div>
+                            <field name="approval_date" class="oe_inline"/>
+                        </div>
+                    </div>
+                    <field name="is_change_status" invisible="1"/>
+                    <field name="is_change_sector" invisible="1"/>
+                    <field name="is_change_department" invisible="1"/>
+                    <field name="is_change_job_title" invisible="1"/>
+                    <field name="is_change_housing_allowance" invisible="1"/>
+                    <field name="is_change_transportation_allowance" invisible="1"/>
+                    <field name="is_change_other_allowance" invisible="1"/>
+                    <field name="is_change_wage" invisible="1"/>
+                    <field name="has_beneficiary" invisible="1"/>
+                    <field name="has_distance_riyadh" invisible="1"/>
+                    <field name="has_country" invisible="1"/>
+                    <field name="has_employee_class" invisible="1"/>
+                    <field name="is_trip" invisible="1"/>
+                    <field name="has_external_stipend" invisible="1"/>
+                    <field name="has_internal_stipend" invisible="1"/>
+                    <label
+                            for="current_department_id"
+                            string="Current Department"
+                            attrs="{'invisible':[('is_change_department','=',False)]}"
+                    />
+                    <div attrs="{'invisible':[('is_change_department','=', False)]}">
+                        <div>
+                            <field name="current_department_id" class="oe_inline"/>
+                        </div>
+                    </div>
+                    <label
+                            for="new_department_id"
+                            string="New Department"
+                            attrs="{'invisible':[('is_change_department','=',False)]}"
+                    />
+                    <div attrs="{'invisible':[('is_change_department','=', False)]}">
+                        <div>
+                            <field
+                                    name="new_department_id"
+                                    class="oe_inline"
+                                    options="{'no_create': True, 'no_edit': True}"
+                                    attrs="{'required': [('is_change_department','=', True)], 'readonly': [('request_status','not in',('new', 'pending'))]}"
+                            />
+                        </div>
+                    </div>
+                    <label
+                            for="current_sector_id"
+                            string="Current sector"
+                            attrs="{'invisible':[('is_change_sector','=',False)]}"
+                    />
+                    <div attrs="{'invisible':[('is_change_sector','=', False)]}">
+                        <div>
+                            <field name="current_sector_id" class="oe_inline"/>
+                        </div>
+                    </div>
+                    <label
+                            for="new_sector_id"
+                            string="New Sector"
+                            attrs="{'invisible':[('is_change_sector','=',False)]}"
+                    />
+                    <div attrs="{'invisible':[('is_change_sector','=',False)]}">
+                        <div>
+                            <field
+                                    name="new_sector_id"
+                                    class="oe_inline"
+                                    options="{'no_create': True, 'no_edit': True}"
+                                    attrs="{'required': [('is_change_sector','=', True)], 'readonly': [('request_status','not in',('new', 'pending'))]}"
+                            />
+                        </div>
+                    </div>
+                    <label
+                            for="current_job_title"
+                            string="Current job title"
+                            attrs="{'invisible':[('is_change_job_title','=',False)]}"
+                    />
+                    <div attrs="{'invisible':[('is_change_job_title','=', False)]}">
+                        <div>
+                            <field name="current_job_title" class="oe_inline"/>
+                        </div>
+                    </div>
+                    <label
+                            for="new_job_title"
+                            string="new  job title"
+                            attrs="{'invisible':[('is_change_job_title','=',False)]}"
+                    />
+                    <div attrs="{'invisible':[('is_change_job_title','=',False)]}">
+                        <div>
+                            <field
+                                    name="new_job_title"
+                                    class="oe_inline"
+                                    attrs="{'required': [('is_change_job_title','=', True)], 'readonly': [('request_status','not in',('new', 'pending'))]}"
+                            />
+                        </div>
+                    </div>
+                    <label
+                            for="current_job_title_ar"
+                            string="Current job title (AR)"
+                            attrs="{'invisible':[('is_change_job_title','=',False)]}"
+                    />
+                    <div attrs="{'invisible':[('is_change_job_title','=', False)]}">
+                        <div>
+                            <field name="current_job_title_ar" class="oe_inline"/>
+                        </div>
+                    </div>
+                    <label
+                            for="new_job_title_ar"
+                            string="new  job title (AR)"
+                            attrs="{'invisible':[('is_change_job_title','=',False)]}"
+                    />
+                    <div attrs="{'invisible':[('is_change_job_title','=',False)]}">
+                        <div>
+                            <field
+                                    name="new_job_title_ar"
+                                    class="oe_inline"
+                                    attrs="{'required': [('is_change_job_title','=', True)], 'readonly': [('request_status','not in',('new', 'pending'))]}"
+                            />
+                        </div>
+                    </div>
+                    <!--                    //////////////////////////-->
+                    <label
+                            for="salary_change_type"
+                            string="Salary Change Type"
+                            attrs="{'invisible':[('is_change_wage','=',False),('is_change_housing_allowance','=',False)
+                           ,('is_change_other_allowance','=',False)
+                           ,('is_change_transportation_allowance','=',False)]}"
+                    />
+                    <div
+                            attrs="{'invisible':[('is_change_wage','=',False),('is_change_housing_allowance','=',False)
+                           ,('is_change_other_allowance','=',False)
+                           ,('is_change_transportation_allowance','=',False)]}"
+                    >
+                        <div>
+                            <field name="salary_change_type" class="oe_inline"/>
+                        </div>
+                    </div>
+                    <label
+                            for="salary_change_percentage"
+                            string="Salary Percentage Change"
+                            attrs="{'invisible':[('salary_change_type','==','flat')]}"
+                    />
+                    <div attrs="{'invisible':[('salary_change_type','==','flat')]}">
+                        <div>
+                            <field name="salary_change_percentage" class="oe_inline"/>
+                        </div>
+                    </div>
+                    <label
+                            for="current_wage"
+                            string="Current Wage"
+                            attrs="{'invisible':[('is_change_wage','=',False)]}"
+                    />
+                    <div attrs="{'invisible':[('is_change_wage','=', False)]}">
+                        <div>
+                            <field name="current_wage" class="oe_inline"/>
+                        </div>
+                    </div>
+                    <label for="new_wage" string="New Wage" attrs="{'invisible':[('is_change_wage','=',False)]}"/>
+                    <div attrs="{'invisible':[('is_change_wage','=',False)]}">
+                        <div>
+                            <field
+                                    name="new_wage"
+                                    class="oe_inline"
+                                    attrs="{'required': [('is_change_wage','=', True)], 'readonly': ['|',('salary_change_type','=','percentage'),('request_status','not in',('new', 'pending'))]}"
+                                    force_save='1'
+                            />
+                        </div>
+                    </div>
+                    <label
+                            for="current_housing_allowance"
+                            string="Current Housing allowance"
+                            attrs="{'invisible':[('is_change_housing_allowance','=',False)]}"
+                    />
+                    <div attrs="{'invisible':[('is_change_housing_allowance','=', False)]}">
+                        <div>
+                            <field name="current_housing_allowance" class="oe_inline"/>
+                        </div>
+                    </div>
+                    <label
+                            for="new_housing_allowance"
+                            string="New Housing allowance"
+                            attrs="{'invisible':[('is_change_housing_allowance','=',False)]}"
+                    />
+                    <div attrs="{'invisible':[('is_change_housing_allowance','=',False)]}">
+                        <div>
+                            <field
+                                    name="new_housing_allowance"
+                                    class="oe_inline"
+                                    attrs="{'required': [('is_change_housing_allowance','=', True)], 'readonly': ['|',('salary_change_type','=','percentage'),('request_status','not in',('new', 'pending'))]}"
+                                    force_save='1'
+                            />
+                        </div>
+                    </div>
+                    <label
+                            for="current_transportation_allowance"
+                            string="Current transportation allowance"
+                            attrs="{'invisible':[('is_change_transportation_allowance','=',False)]}"
+                    />
+                    <div attrs="{'invisible':[('is_change_transportation_allowance','=', False)]}">
+                        <div>
+                            <field name="current_transportation_allowance" class="oe_inline"/>
+                        </div>
+                    </div>
+                    <label
+                            for="new_transportation_allowance"
+                            string="New transportation allowance"
+                            attrs="{'invisible':[('is_change_transportation_allowance','=',False)]}"
+                    />
+                    <div attrs="{'invisible':[('is_change_transportation_allowance','=',False)]}">
+                        <div>
+                            <field
+                                    name="new_transportation_allowance"
+                                    class="oe_inline"
+                                    attrs="{'required': [('is_change_transportation_allowance','=', True)], 'readonly': ['|',('salary_change_type','=','percentage'),('request_status','not in',('new', 'pending'))]}"
+                                    force_save='1'
+                            />
+                        </div>
+                    </div>
+                    <label
+                            for="current_other_allowance"
+                            string="Current other allowance"
+                            attrs="{'invisible':[('is_change_other_allowance','=',False)]}"
+                    />
+                    <div attrs="{'invisible':[('is_change_other_allowance','=', False)]}">
+                        <div>
+                            <field name="current_other_allowance" class="oe_inline"/>
+                        </div>
+                    </div>
+                    <label
+                            for="new_other_allowance"
+                            string="New other allowance"
+                            attrs="{'invisible':[('is_change_other_allowance','=',False)]}"
+                    />
+                    <div attrs="{'invisible':[('is_change_other_allowance','=',False)]}">
+                        <div>
+                            <field
+                                    name="new_other_allowance"
+                                    class="oe_inline"
+                                    attrs="{'required': [('is_change_other_allowance','=', True)], 'readonly': ['|',('salary_change_type','=','percentage'),('request_status','not in',('new', 'pending'))]}"
+                                    force_save='1'
+                            />
+                        </div>
+                    </div>
+                    <!--/////////////////////////////////////////////////////////////////-->
+                    <label
+                            groups="nidlp_base.group_private_employee_visiblity"
+                            for="distance_riyadh"
+                            string="Distance From Riyadh"
+                            attrs="{'invisible':[('has_distance_riyadh','==','no')]}"
+                    />
+                    <div
+                            groups="nidlp_base.group_private_employee_visiblity"
+                            attrs="{'invisible':[('has_distance_riyadh','==','no')]}"
+                    >
+                        <div>
+                            <field
+                                    name="distance_riyadh"
+                                    class="oe_inline"
+                                    attrs="{'readonly': [('request_status','not in',('new', 'pending'))]}"
+                            />
+                        </div>
+                    </div>
+                    <label for="country_id" string="Country" attrs="{'invisible':[('has_country','==','no')]}"/>
+                    <div attrs="{'invisible':[('has_country','==','no')]}">
+                        <div>
+                            <field
+                                    name="country_id"
+                                    class="oe_inline"
+                                    attrs="{'required': [('has_country','==','required')], 'readonly': [('request_status','not in',('new', 'pending'))]}"
+                            />
+                        </div>
+                    </div>
+                    <label
+                            for="employee_rank_id"
+                            groups="nidlp_base.group_private_employee_visiblity"
+                            string="Employee Grade"
+                            attrs="{'invisible':[('has_employee_class','==','no')]}"
+                    />
+                    <div
+                            groups="nidlp_base.group_private_employee_visiblity"
+                            attrs="{'invisible':[('has_employee_class','==','no')]}"
+                    >
+                        <div>
+                            <field name="employee_rank_id"/>
+                        </div>
+                    </div>
+                    <label
+                            groups="nidlp_base.group_private_employee_visiblity"
+                            for="flight_ticket_type"
+                            string="Employee Flight Ticket"
+                            attrs="{'invisible':[('has_employee_class','==','no')]}"
+                    />
+                    <div
+                            groups="nidlp_base.group_private_employee_visiblity"
+                            attrs="{'invisible':[('has_employee_class','==','no')]}"
+                    >
+                        <div>
+                            <field name="flight_ticket_type"/>
+                        </div>
+                    </div>
+                    <label for="trip_type" string="Trip Type" attrs="{'invisible':[('is_trip','=',False)]}"/>
+                    <div attrs="{'invisible':[('is_trip','=',False)]}">
+                        <div>
+                            <field name="trip_type" attrs="{'required': [('is_trip','=',True)]}"/>
+                        </div>
+                    </div>
+                    <label for="trip_reason" string="Trip Reason" attrs="{'invisible':[('is_trip','=',False)]}"/>
+                    <div attrs="{'invisible':[('is_trip','=',False)]}">
+                        <div>
+                            <field name="trip_reason" attrs="{'required': [('is_trip','=',True)]}"/>
+                        </div>
+                    </div>
+                    <label for="trip_days" string="Trip Days" attrs="{'invisible':[('is_trip','=',False)]}"/>
+                    <div attrs="{'invisible':[('is_trip','=',False)]}">
+                        <div>
+                            <field name="trip_days"/>
+                        </div>
+                    </div>
+                    <label for="is_vp_traveling" string="VP Traveling?" attrs="{'invisible':[('is_trip','=',False)]}"/>
+                    <div attrs="{'invisible':[('is_trip','=',False)]}">
+                        <div>
+                            <field name="is_vp_traveling"/>
+                        </div>
+                    </div>
+                    <label
+                            for="is_ceo_traveling"
+                            string="CEO Traveling?"
+                            attrs="{'invisible':[('is_trip','=',False)]}"
+                    />
+                    <div attrs="{'invisible':[('is_trip','=',False)]}">
+                        <div>
+                            <field name="is_ceo_traveling"/>
+                        </div>
+                    </div>
+                    <label
+                            for="change_state_reason"
+                            string="Change Status Reason"
+                            attrs="{'invisible':[('is_change_status','=',False)]}"
+                    />
+                    <div attrs="{'invisible':[('is_change_status','=',False)]}">
+                        <div>
+                            <field name="change_state_reason" attrs="{'required': [('is_change_status','=',True)]}"/>
+                        </div>
+                    </div>
+                    <label
+                            for="change_status_date"
+                            string="Change Stats Effective date"
+                            attrs="{'invisible':[('is_change_status','=',False)]}"
+                    />
+                    <div attrs="{'invisible':[('is_change_status','=',False)]}">
+                        <div>
+                            <field name="change_status_date" attrs="{'required': [('is_change_status','=',True)]}"/>
+                        </div>
+                    </div>
+                    <label
+                            groups="nidlp_base.group_private_employee_visiblity"
+                            for="total_external_trip_stipend"
+                            string=" External Stipend"
+                            attrs="{'invisible':[('has_external_stipend','==','no')]}"
+                    />
+                    <div
+                            groups="nidlp_base.group_private_employee_visiblity"
+                            attrs="{'invisible':[('has_external_stipend','==','no')]}"
+                    >
+                        <div>
+                            <field name="total_external_trip_stipend"/>
+                        </div>
+                    </div>
+                    <label
+                            groups="nidlp_base.group_private_employee_visiblity"
+                            for="total_internal_trip_stipend"
+                            string="Internal Stipend"
+                            attrs="{'invisible':[('has_internal_stipend','==','no')]}"
+                    />
+                    <div
+                            groups="nidlp_base.group_private_employee_visiblity"
+                            attrs="{'invisible':[('has_internal_stipend','==','no')]}"
+                    >
+                        <div>
+                            <field name="total_internal_trip_stipend"/>
+                        </div>
+                    </div>
+                    <label
+                            for="expense_id"
+                            string="Expense"
+                            attrs="{'invisible':[('is_trip','=', False)]}"
+                    />
+                    <div
+                            attrs="{'invisible':[('is_trip','=', False)]}"
+                    >
+                        <div>
+                            <field name="expense_id"/>
+                        </div>
+                    </div>
+                    <label
+                            for="leave_id"
+                            string="Leave"
+                            attrs="{'invisible':[('is_trip','=', False)]}"
+                    />
+                    <div
+                            attrs="{'invisible':[('is_trip','=', False)]}"
+                    >
+                        <div>
+                            <field name="leave_id"/>
+                        </div>
+                    </div>
+                    <field name="is_email_send" invisible="1"/>
+
+                </xpath>
+                <xpath expr='//notebook' position="inside">
+                    <page string="Beneficiaries" attrs="{'invisible':[('has_beneficiary','==','no')]}">
+                        <field
+                                name="employee_beneficiary_ids"
+                                class="oe_inline"
+                                attrs="{'required': [('has_beneficiary','==','required')], 'readonly': [('request_status','not in',('new', 'pending'))]}"
+                        >
+                            <tree editable='bottom'>
+                                <field name="name"/>
+                                <field name="beneficiary_id" string="ID"/>
+                                <field name="phone_number"/>
+                                <field name="relation"/>
+                                <field name="gender"/>
+                                <field name="birth_date"/>
+                                <field name="note"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+                <xpath expr="//field[@name='approver_ids']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+                <xpath
+                        expr="//form/sheet/notebook/page[@name='approvers']/field[@name='approver_ids']/tree/field[@name='user_id']"
+                        position="after"
+                >
+                    <field name="is_ordered" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="approval_request_view_form_hr_group" model="ir.ui.view">
+            <field name="name">approval.request.view.form</field>
+            <field name="model">approval.request</field>
+            <field name="groups_id" eval="[(4, ref('nidlp_approvals.group_hr_approval'))]"/>
+            <field name="inherit_id" ref="approval_request_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr='//field[@name="employee_id"]' position='attributes'>
+                    <attribute name="domain"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="approval_category_view_form" model="ir.ui.view">
+            <field name="name">approval.category.view.form</field>
+            <field name="model">approval.category</field>
+            <field name="inherit_id" ref="approvals.approval_category_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='option_settings']" position="inside">
+                    <field name="is_change_status" string="Change of Status" options="{'horizontal': true}"/>
+                    <field name="is_self_serving" string="Self Serving" options="{'horizontal': true}"/>
+                    <field name="is_change_job_title" string="Change of Job Title" options="{'horizontal': true}"/>
+                    <field
+                            name="is_change_housing_allowance"
+                            string="Change of housing"
+                            options="{'horizontal': true}"
+                    />
+                    <field
+                            name="is_change_transportation_allowance"
+                            string="Change of transportation"
+                            options="{'horizontal': true}"
+                    />
+                    <field
+                            name="is_change_other_allowance"
+                            string="Change of other allowance"
+                            options="{'horizontal': true}"
+                    />
+                    <field name="is_change_wage" string="Change of wage" options="{'horizontal': true}"/>
+                    <field name="is_change_department" string="Change of department" options="{'horizontal': true}"/>
+                    <field name="is_change_sector" string="Change of sector" options="{'horizontal': true}"/>
+                    <field name="expenses_product_id"/>
+                    <field name="leave_type_id"/>
+                    <field name="partner_e_id"/>
+                    <field name="template_id"/>
+                    <field name="is_internal_trip"/>
+                    <field name="is_external_trip"/>
+                </xpath>
+                <xpath expr="//group[@name='approvers']" position="replace">
+                    <group string="Approvers" name="approvers">
+                        <label for="approval_level_type" string="Approval Type"/>
+                        <field name="approval_level_type"/>
+                        <group attrs="{'invisible':[('approval_level_type','=','multi')]}">
+                            <field name="manager_approval"/>
+                            <separator colspan="2"/>
+                            <field name="approver_ids"/>
+                            <field name="approval_minimum"/>
+                            <field name="invalid_minimum" invisible="1"/>
+                            <div
+                                    class="text-warning"
+                                    colspan="2"
+                                    attrs="{'invisible': [('invalid_minimum', '=', False)]}"
+                            >
+                                <span class="fa fa-warning" title="Invalid minimum approvals"/>
+                                <field name="invalid_minimum_warning" nolabel="1"/>
+                            </div>
+                        </group>
+                        <field name="approval_levels" attrs="{'invisible':[('approval_level_type','=','single')]}">
+                            <tree editable="bottom">
+                                <field name="sequence" widget="handle"/>
+                                <field name="name"/>
+                                <field name="type" required="True"/>
+                                <field
+                                        name="user_id"
+                                        attrs="{'invisible':[('type','!=','user')], 'required':[('type','=','user')]}"
+                                />
+                                <field
+                                        name="group_id"
+                                        attrs="{'invisible':[('type','!=','group')], 'required':[('type','=','group')]}"
+                                />
+                                <field
+                                        name="is_transfer"
+                                        attrs="{'column_invisible':[('parent.is_change_sector','=',False),('parent.is_change_department','=',False)]}"
+                                />
+                            </tree>
+                        </field>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="hr_expense_view_form_inh" model="ir.ui.view">
+            <field name="name">hr.expense.view.form.inh.n</field>
+            <field name="model">hr.expense</field>
+            <field name="inherit_id" ref="hr_expense.hr_expense_view_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='employee_id']" position="after">
+                    <field name="trip_id"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

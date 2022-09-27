@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.inter.company.rules</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
+            <field name="arch" type="xml">
+                <div id="companies" position="after">
+                    <h2>NIDLP Settings</h2>
+                    <div class='row mt16 o_settings_container'>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class='o_setting_right_pane'>
+                                <div class="o_form_label">Employee Certificate Issuer</div>
+                                <div class="text-muted">Name of the employee in employee certificate documents</div>
+                                <div class='mt8'>
+                                    <field name="employee_certificate_issuer" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class='o_setting_right_pane'>
+                                <div class="o_form_label">IT Staff</div>
+                                <div class="text-muted">
+                                    Name of the it staff that will recieve emails on new joiners
+                                </div>
+                                <div class='mt8'>
+                                    <field name="it_staff_ids" widget="many2many_tags" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='row mt16 o_settings_container'>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class='o_setting_right_pane'>
+                                <div class="o_form_label">Company CEO</div>
+                                <div class="text-muted">Company CEO Employee ID</div>
+                                <div class='mt8'>
+                                    <field name="company_ceo" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class='o_setting_right_pane'>
+                                <div class="o_form_label">Company Stamp</div>
+                                <div class="text-muted">Stamp of the company to be printed on documents</div>
+                                <div class='mt8'>
+                                    <field name="company_stamp" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

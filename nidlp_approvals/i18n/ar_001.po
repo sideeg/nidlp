@@ -1,0 +1,944 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* nidlp_approvals
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e-20220524\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-21 05:54+0000\n"
+"PO-Revision-Date: 2022-07-21 05:54+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: nidlp_approvals
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_request__distance_riyadh__40_79
+msgid "40-79 km"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_category_view_form
+msgid "<span class=\"fa fa-warning\" title=\"Invalid minimum approvals\"/>"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__employee_certificate_type
+msgid "Address To"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Address to:"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.ui.menu,name:nidlp_approvals.all_approvals
+msgid "All Approvals"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model,name:nidlp_approvals.model_approval_category
+msgid "Approval Category"
+msgstr "فئة الموافقة "
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__approval_date
+msgid "Approval Date"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Approval Date:"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category__approval_level_type
+msgid "Approval Level Type"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category__approval_levels
+msgid "Approval Levels"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model,name:nidlp_approvals.model_approval_request
+msgid "Approval Request"
+msgstr "طلب موافقة "
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_category_view_form
+msgid "Approval Type"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model,name:nidlp_approvals.model_approval_approver
+msgid "Approver"
+msgstr "مُعتَمِد "
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_category_view_form
+msgid "Approvers"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Beneficiaries"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:approval.category,name:nidlp_approvals.approval_category_beneficiary_reqeust
+msgid "Beneficiary Request"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "CEO Traveling?"
+msgstr "رحلة عمل مع المدير التنفيذى"
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category_levels__category_id
+msgid "Category"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_category_levels__type__user
+msgid "Certain User"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__change_state_reason
+msgid "Change State Reason"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Change Stats Effective date"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__change_status_date
+msgid "Change Status Date"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Change Status Reason"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_category_view_form
+msgid "Change of Job Title"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_category_view_form
+msgid "Change of Status"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_category_view_form
+msgid "Change of department"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_category_view_form
+msgid "Change of housing"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_category_view_form
+msgid "Change of other allowance"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_category_view_form
+msgid "Change of sector"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_category_view_form
+msgid "Change of transportation"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_category_view_form
+msgid "Change of wage"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__contract_id
+msgid "Contract"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__country_id
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Country"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category_levels__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category_levels__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Current Department"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Current Housing allowance"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__current_job_title
+msgid "Current Job Title"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__current_job_title_ar
+msgid "Current Job Title Ar"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Current Wage"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Current job title"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Current job title (AR)"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Current other allowance"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Current sector"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Current transportation allowance"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__current_department_id
+msgid "Department"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_category_levels__type__department_manager
+msgid "Department Managers"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category_levels__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Distance From Riyadh"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__distance_riyadh
+msgid "Distance from Riyadh"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__employee_id
+msgid "Employee"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__employee_beneficiary_ids
+msgid "Employee Beneficiary"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:approval.category,name:nidlp_approvals.approval_category_data_procurement
+msgid "Employee Certificate"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__employee_certificate_address
+msgid "Employee Certificate Address"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__employee_certificate_address_ar
+msgid "Employee Certificate Address Ar"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category__is_employee_certificate
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__is_employee_certificate
+msgid "Employee Certificate Category"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Employee Flight Ticket"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__employee_rank_id
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Employee Grade"
+msgstr ""
+
+#. module: nidlp_approvals
+#: code:addons/nidlp_approvals/models/approval_request.py:0
+#, python-format
+msgid "Employee is not part of a department!"
+msgstr ""
+
+#. module: nidlp_approvals
+#: code:addons/nidlp_approvals/models/approval_request.py:0
+#, python-format
+msgid "Employee is not part of a sector!"
+msgstr ""
+
+#. module: nidlp_approvals
+#: code:addons/nidlp_approvals/models/approval_request.py:0
+#, python-format
+msgid "Employee's depeartment is missing the manager!"
+msgstr ""
+
+#. module: nidlp_approvals
+#: code:addons/nidlp_approvals/models/approval_request.py:0
+#, python-format
+msgid "Employee's information is missing the manager!"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,help:nidlp_approvals.field_approval_request__current_wage
+msgid "Employee's monthly gross wage."
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__expense_id
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Expense"
+msgstr "المصروف"
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category__expenses_product_id
+msgid "Expenses Product"
+msgstr "بند المصروف"
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "External Stipend"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__external_trip_stipend
+msgid "External Trip Stipend"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_request__salary_change_type__flat
+msgid "Flat Amount"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__flight_ticket_type
+msgid "Flight Ticket Type"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_approver__group_id
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category_levels__group_id
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_category_levels__type__group
+msgid "Group"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:res.groups,name:nidlp_approvals.group_hr_approval
+msgid "HR Approval Group"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category__has_beneficiary
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__has_beneficiary
+msgid "Has Adding Beneficiary "
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category__is_change_department
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__is_change_department
+msgid "Has Change of Department"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category__is_change_job_title
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__is_change_job_title
+msgid "Has Change of Job Title"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category__is_change_sector
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__is_change_sector
+msgid "Has Change of Sector"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category__is_change_wage
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__is_change_wage
+msgid "Has Change of basic salary"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category__is_change_housing_allowance
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__is_change_housing_allowance
+msgid "Has Change of housing allowance"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category__is_change_other_allowance
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__is_change_other_allowance
+msgid "Has Change of other allowance"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category__is_change_transportation_allowance
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__is_change_transportation_allowance
+msgid "Has Change of transportation allowance"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category__has_distance_riyadh
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__has_distance_riyadh
+msgid "Has Distance from riyadh"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category__has_country
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__has_country
+msgid "Has country"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category__has_employee_class
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__has_employee_class
+msgid "Has employee class"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category__has_external_stipend
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__has_external_stipend
+msgid "Has external stipend"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category__has_internal_stipend
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__has_internal_stipend
+msgid "Has internal stipend"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category_levels__id
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "ID"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Internal Stipend"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__internal_trip_stipend
+msgid "Internal Trip Stipend"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:approval.category,name:nidlp_approvals.approval_category_data_business_trip
+msgid "International Business Trip"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__is_ceo_traveling
+msgid "Is Ceo Traveling"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category__is_change_status
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__is_change_status
+msgid "Is Change Status"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_approver__is_ordered
+msgid "Is Ordered"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category__is_self_serving
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__is_self_serving
+msgid "Is Self Serving"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category__is_trip
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__is_trip
+msgid "Is Trip"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__is_vp_traveling
+msgid "Is Vp Traveling"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category_levels____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category_levels__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category_levels__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__leave_id
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Leave"
+msgstr "الإجازة"
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category__leave_type_id
+msgid "Leave Type"
+msgstr "نوع الإجازة"
+
+#. module: nidlp_approvals
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_category_levels__type__line_manager
+msgid "Line Managers"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:approval.category,name:nidlp_approvals.approval_category_data_local_trip
+msgid "Local Business Trip"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_request__distance_riyadh__79_more
+msgid "More than 79km"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_category__approval_level_type__multi
+msgid "Multi-Level Approval"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category_levels__name
+msgid "Name"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__new_department_id
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "New Department"
+msgstr ""
+
+#. module: nidlp_approvals
+#: code:addons/nidlp_approvals/models/approval_request.py:0
+#, python-format
+msgid "New Department Manager has no related user in the system!"
+msgstr ""
+
+#. module: nidlp_approvals
+#: code:addons/nidlp_approvals/models/approval_request.py:0
+#, python-format
+msgid "New Department has no manager selected! Please select a manager"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category_levels__is_transfer
+msgid "New Department/Sector"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__new_housing_allowance
+msgid "New Housing Allowance"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "New Housing allowance"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__new_job_title
+msgid "New Job Title"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__new_job_title_ar
+msgid "New Job Title Ar"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__new_other_allowance
+msgid "New Other Allowance"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__new_sector_id
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "New Sector"
+msgstr ""
+
+#. module: nidlp_approvals
+#: code:addons/nidlp_approvals/models/approval_request.py:0
+#, python-format
+msgid "New Sector Manager has no related user in the system!"
+msgstr ""
+
+#. module: nidlp_approvals
+#: code:addons/nidlp_approvals/models/approval_request.py:0
+#, python-format
+msgid "New Sector has no manager selected! Please select a manager"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__new_transportation_allowance
+msgid "New Transportation Allowance"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__new_wage
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "New Wage"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "New other allowance"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "New transportation allowance"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_category__has_beneficiary__no
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_category__has_country__no
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_category__has_distance_riyadh__no
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_category__has_employee_class__no
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_category__has_external_stipend__no
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_category__has_internal_stipend__no
+msgid "None"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_category__has_beneficiary__optional
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_category__has_country__optional
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_category__has_distance_riyadh__optional
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_category__has_employee_class__optional
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_category__has_external_stipend__optional
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_category__has_internal_stipend__optional
+msgid "Optional"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_request__salary_change_type__percentage
+msgid "Percentage"
+msgstr ""
+
+#. module: nidlp_approvals
+#: code:addons/nidlp_approvals/models/approval_request.py:0
+#, python-format
+msgid ""
+"Please select Employee Certificate Issuer and the CEO in the general "
+"settings!"
+msgstr ""
+
+#. module: nidlp_approvals
+#: code:addons/nidlp_approvals/models/approval_request.py:0
+#, python-format
+msgid "Previous approver has to approve first!"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Print Document"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Print Document (Detailed Salary)"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Print Document (No Salary)"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Print Document (Total Salary)"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_category__has_beneficiary__required
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_category__has_country__required
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_category__has_distance_riyadh__required
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_category__has_employee_class__required
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_category__has_external_stipend__required
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_category__has_internal_stipend__required
+msgid "Required"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__salary_change_percentage
+msgid "Salary Change Percentage"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__salary_change_type
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Salary Change Type"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_request__employee_certificate_type__salary_dom
+msgid "Salary Domiciliation"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Salary Percentage Change"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__current_housing_allowance
+msgid "Saudi Housing Allowance"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__current_other_allowance
+msgid "Saudi Other Allowances"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__current_transportation_allowance
+msgid "Saudi Transportation Allowance"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__current_sector_id
+msgid "Sector"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_category_levels__type__sector_manager
+msgid "Sector Managers"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_category_view_form
+msgid "Self Serving"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category_levels__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_category__approval_level_type__single
+msgid "Single Level Approval"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Specific Address (Arabic):"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Specific Address:"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_request__employee_certificate_type__specific
+msgid "Specific Entity"
+msgstr ""
+
+#. module: nidlp_approvals
+#: code:addons/nidlp_approvals/models/approval_request.py:0
+#, python-format
+msgid "Start date should not be greater than end date."
+msgstr ""
+
+#. module: nidlp_approvals
+#: code:addons/nidlp_approvals/models/approval_request.py:0
+#, python-format
+msgid ""
+"The Employee's Department Manager does not have a related user in the "
+"system!"
+msgstr ""
+
+#. module: nidlp_approvals
+#: code:addons/nidlp_approvals/models/approval_request.py:0
+#, python-format
+msgid "The Employee's Line Manager is not set!"
+msgstr ""
+
+#. module: nidlp_approvals
+#: code:addons/nidlp_approvals/models/approval_request.py:0
+#, python-format
+msgid "The Employee's Manager does not have a related user in the system!"
+msgstr ""
+
+#. module: nidlp_approvals
+#: code:addons/nidlp_approvals/models/approval_request.py:0
+#, python-format
+msgid ""
+"The Employee's line manager does not have a related user in the system!"
+msgstr ""
+
+#. module: nidlp_approvals
+#: code:addons/nidlp_approvals/models/approval_request.py:0
+#, python-format
+msgid "This Employee does not have a running contract!"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields.selection,name:nidlp_approvals.selection__approval_request__employee_certificate_type__none
+msgid "To Whom It May concern"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__total_external_trip_stipend
+msgid "Total External Trip Stipend"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__total_internal_trip_stipend
+msgid "Total Internal Trip Stipend"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:mail.activity.type,name:nidlp_approvals.mail_activity_data_trip_approval
+msgid "Trip Approved"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__trip_days
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Trip Days"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__trip_type
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Trip Reason"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__trip_reason
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "Trip Reason"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category_levels__type
+msgid "Type"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_category_levels__user_id
+msgid "User"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "VP Traveling?"
+msgstr "رحلة عمل مع نائب الرئيس التنفيذى"
+
+#. module: nidlp_approvals
+#: model:ir.model.fields,field_description:nidlp_approvals.field_approval_request__current_wage
+msgid "Wage"
+msgstr ""
+
+#. module: nidlp_approvals
+#: code:addons/nidlp_approvals/models/approval_request.py:0
+#, python-format
+msgid "You cannot raise this type of approval for your self!"
+msgstr ""
+
+#. module: nidlp_approvals
+#: code:addons/nidlp_approvals/models/approval_request.py:0
+#, python-format
+msgid ""
+"You cannot raise this type of approval unless you are part of HR or this "
+"employee's manager!"
+msgstr ""
+
+#. module: nidlp_approvals
+#: code:addons/nidlp_approvals/models/approval_request.py:0
+#, python-format
+msgid "You have the same trip in same date."
+msgstr ""
+
+#. module: nidlp_approvals
+#: model:ir.model,name:nidlp_approvals.model_approval_category_levels
+msgid "approval.category.levels"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "new  job title"
+msgstr ""
+
+#. module: nidlp_approvals
+#: model_terms:ir.ui.view,arch_db:nidlp_approvals.approval_request_view_form
+msgid "new  job title (AR)"
+msgstr ""
+
+#. module: nidlp_approvals
+#: code:addons/nidlp_approvals/models/approval_request.py:0
+#, python-format
+msgid "please select the leave type."
+msgstr "الرجاء تحديد نوع الاجازة"
+
+#. module: approvals
+#: model:ir.ui.menu,name:approvals.approvals_menu_root
+msgid "Approvals"
+msgstr "الطلبات"

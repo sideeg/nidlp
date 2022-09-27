@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <template id="report_trip_view">
+            <div class="header" style="font-family: sans-serif;">
+                <div t-attf-class="o_company_#{o.company_id.id}_layout" t-att-style="report_header_style">
+                    <div class="row col-12" style="font-family: Calibri; text-align: center;direction: rtl;">
+                        <div class="col-5">
+                            <img
+                                    t-if="o.company_id.logo"
+                                    t-att-src="'data:image/png;base64,%s' % to_text(o.company_id.logo)"
+                                    style="height: 100px;"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <t t-call="web.basic_layout">
+                <xpath expr="//div[hasclass='page']" position="replace">
+                    <div class="page h1-title-big">
+                        <style>
+                            .center {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border: 3px solid green;
+                            }
+                        </style>
+                        <h2 style="text-align: center;padding-top: 15px;text-decoration: underline;">
+                            طلب إصدار تذكرة
+                        </h2>
+                    </div>
+                    <table class="table table-sm" style="margin-top: 40px; font-size: 20px;">
+                        <colgroup>
+                            <col width='25%'/>
+                            <col width='25%'/>
+                            <col width='25%'/>
+                            <col width='25%'/>
+                        </colgroup>
+                        <tbody>
+                            <!-- *************************************************************************************************** -->
+                            <tr>
+                                <td class="text-center" colspan="2" style="border:1px solid black;vertical-align: middle;">
+                                    <span t-esc="datetime.datetime.now().strftime('%Y-%m-%d')"></span>
+                                </td>
+                                <td class="text-center" colspan="2" style="border:1px solid black;">
+                                    <span>التاريخ</span>
+                                    <br/>
+                                    <span>Date</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td
+                                        colspan="2"
+                                        class="text-center"
+                                        style="border:1px solid black; background-color:#7244a0;color:#fff"
+                                >
+                                    <strong>Requester Information</strong>
+                                </td>
+                                <td
+                                        colspan="2"
+                                        class="text-center"
+                                        style="border:1px solid black; background-color:#7244a0;color:#fff"
+                                >
+                                    <strong>معلومات مقدم الطلب</strong>
+                                </td>
+                            </tr>
+                            <!-- .................................. -->
+                            <tr>
+                                <td class="text-center" style="border:1px solid black; vertical-align: middle;">
+                                    <strong t-field="o.employee_id.arabic_name"/>
+                                    <br/>
+                                    <strong t-field="o.employee_id.name"/>
+                                </td>
+                                <td class="text-center" style="border:1px solid black;">
+                                    <span>الإسم</span>
+                                    <br/>
+                                    <span>Name</span>
+                                </td>
+                                <td class="text-center" style="border:1px solid black;vertical-align: middle;">
+                                    <strong t-field="o.sudo().employee_id.identification_id"/>
+                                </td>
+                                <td class="text-center" style="border:1px solid black;">
+                                    <span>رقم الهوية</span>
+                                    <br/>
+                                    <span>Identification No.</span>
+                                </td>
+                            </tr>
+                            <!-- .................................. -->
+                            <tr>
+                                <td class="text-center" style="border:1px solid black;vertical-align: middle;">
+                                    <strong t-field="o.sudo().employee_id.passport_expiry_date"/>
+                                </td>
+                                <td class="text-center" style="border:1px solid black;">
+                                    <span>تاريخ إنتهاء الجواز</span>
+                                    <br/>
+                                    <span>Passport Expiry Date</span>
+                                </td>
+                                <td class="text-center" style="border:1px solid black;vertical-align: middle;">
+                                    <strong t-field="o.sudo().employee_id.passport_id"/>
+                                </td>
+                                <td class="text-center" style="border:1px solid black;">
+                                    <span>رقم الجواز</span>
+                                    <br/>
+                                    <span>Passport No.</span>
+                                </td>
+                            </tr>
+                            <!-- .................................. -->
+                            <tr>
+                                <td class="text-center" style="border:1px solid black;vertical-align: middle;">
+                                    <strong t-field="o.employee_id.mobile_phone"/>
+                                </td>
+                                <td class="text-center" style="border:1px solid black;">
+                                    <span>رقم الجوال</span>
+                                    <br/>
+                                    <span>Mobile No.</span>
+                                </td>
+                                <td class="text-center" style="border:1px solid black;vertical-align: middle;">
+                                    <strong t-field="o.employee_id.work_email"/>
+                                </td>
+                                <td class="text-center" style="border:1px solid black;">
+                                    <span>الإيميل</span>
+                                    <br/>
+                                    <span>Email</span>
+                                </td>
+                            </tr>
+
+
+                            <!-- *************************************************************************************************** -->
+                            <tr>
+                                <td
+                                        colspan="2"
+                                        class="text-center"
+                                        style="border:1px solid black; background-color:#7244a0;color:#fff"
+                                >
+                                    <strong>Trip Information</strong>
+                                </td>
+                                <td
+                                        colspan="2"
+                                        class="text-center"
+                                        style="border:1px solid black; background-color:#7244a0;color:#fff"
+                                >
+                                    <strong>معلومات الرحلة</strong>
+                                </td>
+                            </tr>
+                            <!-- .................................. -->
+                            <table
+                                    class="table table-sm o_main_table"
+                                    name="invoice_line_table"
+                                    style="margin-top:-16px;"
+                            >
+                                <colgroup>
+                                    <col width='20%'/>
+                                    <col width='40%'/>
+                                    <col width='10%'/>
+                                    <col width='15%'/>
+                                    <col width='15%'/>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="text-center" style="border: 1px solid;">
+                                            <span>تاريخ العودة</span>
+                                        </th>
+                                        <th class="text-center" style="border: 1px solid;">
+                                            <span>تاريخ الذهاب</span>
+                                        </th>
+                                        <th class="text-center" style="border: 1px solid;">
+                                            <span>نوع التذكرة</span>
+                                        </th>
+                                        <th  class="text-center" style="border: 1px solid;">
+                                            <span>المدينة/الدولة</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="invoice_tbody">
+                                    <td class="text-center" style="border: 1px solid;">
+                                        <span t-field="o.date_end" t-options='{"format": "MM/dd/yyyy"}'/>
+                                    </td>
+                                    <td class="text-center" style="border: 1px solid;">
+                                        <span t-field="o.date_start" t-options='{"format": "MM/dd/yyyy"}'/>
+                                    </td>
+                                    <td class="text-center" style="border: 1px solid;">
+                                        <span t-field="o.flight_ticket_type"/>
+                                    </td>
+                                    <td class="text-center" style="border: 1px solid;">
+                                        <span t-if="o.country_id"  t-field="o.country_id.name"/>
+                                        <span t-field="o.location"/>
+                                    </td>
+                                </tbody>
+                            </table>
+                        </tbody>
+                    </table>
+
+                    <div class="col-3">
+                        <div style="text-right; background-color:#FFF">
+                            <t t-if="o.qr_code">
+                                <img t-att-src="image_data_uri(o.qr_code)" style="max-height: 200px;" alt="QR Code"/>
+                            </t>
+                        </div>
+                    </div>
+
+                </xpath>
+            </t>
+        </template>
+
+        <template id="trip_container">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-set="o" t-value="o.with_context({'lang':'en_US'})"/>
+                    <t t-call="nidlp_approvals.report_trip_view"/>
+                </t>
+            </t>
+        </template>
+
+        <report
+                id="trip_report"
+                model="approval.request"
+                string="Trip"
+                name="nidlp_approvals.trip_container"
+                file="nidlp_approvals.trip_container"
+                report_type="qweb-pdf"/>
+        odoo_r
+    </data>
+</odoo>
