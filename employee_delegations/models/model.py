@@ -54,6 +54,7 @@ class EmployeeDelegations(models.Model):
 
                 for group_id in rec.group_ids:
                     rec.delegated_employee_id.user_id.groups_id = [(4, group_id.id)]
+                    rec.employee_id.user_id.groups_id = [(3, group_id.id)]
                     if rec.name == 'hr_holidays.group_hr_holidays_user':
                         # self.is_leave_user = True
                         group_e = self.env.ref('hr_holidays.group_hr_holidays_user', False)
@@ -62,6 +63,8 @@ class EmployeeDelegations(models.Model):
                 rec.readonly = True
                 rec.is_granted = True
                 rec.state = 'access_granted'
+                print(rec.employee_id.user_id.groups_id,'**************************************************')
+
         # return {
         #     'type': 'ir.actions.client',
         #     'tag': 'reload',
@@ -71,11 +74,13 @@ class EmployeeDelegations(models.Model):
         for rec in self:
             if rec.group_ids :
                 for group_id in rec.group_ids:
-                    rec.delegated_employee_id.user_id.groups_id = [(4, group_id.id)]
+                    rec.delegated_employee_id.user_id.groups_id = [(3, group_id.id)]
+                    rec.employee_id.user_id.groups_id = [(4, group_id.id)]
 
                 rec.readonly = True
                 rec.is_granted = False
                 rec.state = 'access_returned'
+                print(rec.employee_id.user_id.groups_id,'**************************************************')
         # return {
         #     'type': 'ir.actions.client',
         #     'tag': 'reload',
